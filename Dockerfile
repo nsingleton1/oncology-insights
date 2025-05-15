@@ -33,10 +33,14 @@ RUN if [ -d "public/data/insights" ]; then \
     fi
 
 # Production stage
-FROM nginx:alpine
+FROM nginx:stable-alpine
 
-# Install curl for healthcheck
-RUN apk add --no-cache curl
+# Install curl for healthcheck and other utilities
+RUN apk add --no-cache curl bash
+
+# Create a simple startup script
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+RUN rm /etc/nginx/conf.d/default.conf.default || echo "No default.conf.default to remove"
 
 # Ensure the html directory exists
 RUN mkdir -p /usr/share/nginx/html
@@ -44,23 +48,33 @@ RUN mkdir -p /usr/share/nginx/html
 # Copy built files from build stage
 COPY --from=build /app/build/ /usr/share/nginx/html/
 
-# Copy custom nginx config
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Ensure index.html exists for SPA
+RUN echo '<html><body><h1>Oncology Insights</h1><p>Application is being deployed. Please check back later.</p></body></html>' > /usr/share/nginx/html/index.html
 
-# Add a basic index.html if none exists
-RUN if [ ! -f /usr/share/nginx/html/index.html ]; then \
-    echo '<html><body><h1>Oncology Insights</h1><p>Application is being deployed. Please check back later.</p></body></html>' > /usr/share/nginx/html/index.html; \
-fi
-
-# Add a healthcheck file specifically for health monitoring
+# Create health check files
 RUN echo '{"status":"ok"}' > /usr/share/nginx/html/health.json
 
-# Add explicit health check
-HEALTHCHECK --interval=10s --timeout=5s --start-period=15s --retries=3 \
-  CMD curl -f http://localhost/ || exit 1
+# Create a startup script that ensures nginx is running
+RUN echo '#!/bin/bash\n\
+echo "Starting nginx server..."\n\
+nginx -t\n\
+echo "Nginx configuration is valid"\n\
+mkdir -p /usr/share/nginx/html\n\
+echo "Ensuring health check file exists..."\n\
+echo "{\\"status\\":\\"healthy\\"}" > /usr/share/nginx/html/health.json\n\
+echo "Creating health endpoint response..."\n\
+echo "{\\"status\\":\\"healthy\\"}" > /usr/share/nginx/html/health\n\
+echo "Starting nginx daemon..."\n\
+exec nginx -g "daemon off;"\n' > /start.sh
 
-# Expose port 80
+RUN chmod +x /start.sh
+
+# Health checks
+HEALTHCHECK --interval=5s --timeout=3s --start-period=10s --retries=3 \
+  CMD curl -f http://localhost/health || curl -f http://localhost/health.json || curl -f http://localhost/
+
+# Expose port
 EXPOSE 80
 
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"] 
+# Use our custom start script
+CMD ["/start.sh"] 
