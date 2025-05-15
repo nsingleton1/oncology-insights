@@ -1,0 +1,21 @@
+{
+  "id": "biomarker-compliance",
+  "type": "biomarker_analysis",
+  "display_name": "Biomarker Testing Compliance",
+  "description": "Analysis of biomarker testing compliance across cancer types",
+  "patient_count": 3850,
+  "summary": "Overall biomarker testing compliance is at 72%, with significant variation by cancer type and practice location.",
+  "created_date": "2023-04-22",
+  "charts": [
+    {
+      "title": "Biomarker Testing Compliance by Cancer Type",
+      "chart_type": "bar",
+      "data_source": "biomarker-compliance-details.json"
+    }
+  ],
+  "recommendations": [
+    "Implement universal reflex biomarker testing protocols",
+    "Establish quality metrics for biomarker turnaround time",
+    "Develop provider education program on biomarker-guided therapy selection"
+  ]
+} 

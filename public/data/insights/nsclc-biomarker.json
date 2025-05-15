@@ -1,0 +1,21 @@
+{
+  "id": "nsclc-biomarker-insights",
+  "type": "biomarker_analysis",
+  "display_name": "NSCLC Biomarker Testing Compliance",
+  "description": "Analysis of biomarker testing rates and patterns in NSCLC patients",
+  "patient_count": 1250,
+  "summary": "Overall biomarker testing compliance is at 78% for NSCLC patients, with significant variation between testing types.",
+  "created_date": "2023-04-15",
+  "charts": [
+    {
+      "title": "Biomarker Testing Rates by Marker Type",
+      "chart_type": "bar",
+      "data_source": "nsclc-biomarker-details.json"
+    }
+  ],
+  "recommendations": [
+    "Implement reflex testing protocols for all newly diagnosed NSCLC patients",
+    "Review testing workflows to reduce turnaround time",
+    "Develop provider education materials on biomarker-guided therapies"
+  ]
+} 

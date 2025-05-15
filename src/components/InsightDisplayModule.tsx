@@ -53,9 +53,10 @@ function highlightSummary(summary: string) {
 
 interface InsightDisplayModuleProps {
   insight: InsightData;
+  onDrilldown?: (jsonFile: string, title: string) => Promise<void>;
 }
 
-export const InsightDisplayModule: React.FC<InsightDisplayModuleProps> = ({ insight }) => {
+export const InsightDisplayModule: React.FC<InsightDisplayModuleProps> = ({ insight, onDrilldown }) => {
   // Check if the chart data is in the new format (nested under 'chart' property)
   // or the old format (directly in 'chart_data' property)
   const chartData = insight.chart?.data || insight.chart_data || [];
@@ -99,11 +100,18 @@ export const InsightDisplayModule: React.FC<InsightDisplayModuleProps> = ({ insi
       </div>
       <div className="flex flex-wrap gap-2 pt-4">
         {insight.drilldowns ? insight.drilldowns.map((drilldown) => (
-          <button key={drilldown.label} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium hover:bg-blue-200">
+          <button 
+            key={drilldown.label} 
+            className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium hover:bg-blue-200"
+            onClick={() => onDrilldown && onDrilldown(drilldown.jsonFile, drilldown.label)}
+          >
             {drilldown.label}
           </button>
         )) : ["View by Payer Type", "Compare Sites", "Variance by Regimen"].map((chip) => (
-          <button key={chip} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium hover:bg-blue-200">
+          <button 
+            key={chip} 
+            className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium hover:bg-blue-200"
+          >
             {chip}
           </button>
         ))}

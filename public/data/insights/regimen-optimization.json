@@ -1,0 +1,21 @@
+{
+  "id": "regimen-optimization",
+  "type": "regimen_analysis",
+  "display_name": "Regimen Optimization",
+  "description": "Analysis of treatment regimens for outcomes and cost optimization",
+  "patient_count": 1850,
+  "summary": "Three priority areas identified for regimen optimization, with potential for 12% cost reduction while maintaining or improving outcomes.",
+  "created_date": "2023-04-12",
+  "charts": [
+    {
+      "title": "Regimen Cost-Effectiveness by Cancer Type",
+      "chart_type": "scatter",
+      "data_source": "regimen-optimization-details.json"
+    }
+  ],
+  "recommendations": [
+    "Standardize first-line NSCLC treatment selection based on biomarker status",
+    "Implement dose optimization protocol for targeted therapies",
+    "Develop pathway compliance monitoring system"
+  ]
+} 

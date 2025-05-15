@@ -1,0 +1,21 @@
+{
+  "id": "clinical-outcomes",
+  "type": "outcomes_analysis",
+  "display_name": "Clinical Outcomes Analysis",
+  "description": "Analysis of outcomes by provider, site, and regimen",
+  "patient_count": 3250,
+  "summary": "Overall survival rates show 5% variation across sites, with significant differences in progression-free survival by regimen and provider.",
+  "created_date": "2023-04-14",
+  "charts": [
+    {
+      "title": "Survival Outcomes by Practice Site",
+      "chart_type": "line",
+      "data_source": "clinical-outcomes-details.json"
+    }
+  ],
+  "recommendations": [
+    "Implement best practices from high-performing sites",
+    "Develop standardized symptom management protocols",
+    "Create provider-specific outcome dashboards for continuous improvement"
+  ]
+} 

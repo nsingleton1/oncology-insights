@@ -1,0 +1,21 @@
+{
+  "id": "crc-biomarker-insights",
+  "type": "biomarker_analysis",
+  "display_name": "Colorectal Cancer Biomarker Testing Patterns",
+  "description": "Analysis of biomarker testing rates and patterns in CRC patients",
+  "patient_count": 980,
+  "summary": "Biomarker testing for CRC patients is inconsistent, with only 65% of eligible patients receiving complete panel testing.",
+  "created_date": "2023-04-18",
+  "charts": [
+    {
+      "title": "CRC Biomarker Testing Compliance by Provider",
+      "chart_type": "bar",
+      "data_source": "crc-biomarker-details.json"
+    }
+  ],
+  "recommendations": [
+    "Standardize CRC biomarker testing protocols across all practice sites",
+    "Implement automatic order sets for newly diagnosed CRC patients",
+    "Establish quality metrics for biomarker testing turnaround times"
+  ]
+} 

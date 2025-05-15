@@ -1,0 +1,21 @@
+{
+  "id": "breast-biomarker-insights",
+  "type": "biomarker_analysis",
+  "display_name": "Breast Cancer Biomarker Utilization",
+  "description": "Analysis of biomarker testing patterns and provider variation in breast cancer",
+  "patient_count": 1520,
+  "summary": "Hormone receptor and HER2 testing compliance is high (96%), but genomic testing varies significantly by provider and site.",
+  "created_date": "2023-04-20",
+  "charts": [
+    {
+      "title": "Genomic Testing Utilization by Site",
+      "chart_type": "bar",
+      "data_source": "breast-biomarker-details.json"
+    }
+  ],
+  "recommendations": [
+    "Develop consistent guidelines for genomic testing in early-stage breast cancer",
+    "Address disparities in genomic testing across practice sites",
+    "Implement decision support tools in EMR for test selection"
+  ]
+} 
