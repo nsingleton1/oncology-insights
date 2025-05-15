@@ -3,20 +3,15 @@
 [build]
 builder = "dockerfile"
 dockerfile = "Dockerfile"
-buildCommand = "npm install -g react-scripts serve && npm install && npm run build"
 
 [deploy]
-startCommand = "/start.sh"
 restartPolicyType = "ON_FAILURE"
 restartPolicyMaxRetries = 10
-healthcheckPath = "/health"
-healthcheckTimeout = 60
-healthcheckInterval = 15
-startupDelay = "15s"
+healthcheckPath = "/health.json"
+healthcheckTimeout = 90
 
 [environment]
-PORT = "80"
+PORT = "8080"
 NODE_ENV = "production"
 npm_config_legacy_peer_deps = "true"
-REACT_APP_ENVIRONMENT = "production"
-REACT_APP_VERSION = "railway-deployment" 
+REACT_APP_ENVIRONMENT = "production" 
