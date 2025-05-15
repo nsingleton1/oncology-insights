@@ -2,7 +2,7 @@
 
 [build]
 builder = "dockerfile"
-dockerfile = "oncology-insights/Dockerfile"
+dockerfile = "Dockerfile"
 
 [deploy]
 startCommand = "nginx -g 'daemon off;'"
