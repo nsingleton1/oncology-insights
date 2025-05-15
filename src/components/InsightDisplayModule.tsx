@@ -10,7 +10,7 @@ import {
   ResponsiveContainer,
   Cell
 } from 'recharts';
-import { InsightData } from '../types';
+import { InsightData, ChartDataPoint } from '../types';
 
 function highlightSummary(summary: string) {
   // Highlight dollar amounts, percentages, negative/positive trends, and key phrases
@@ -57,16 +57,43 @@ interface InsightDisplayModuleProps {
 }
 
 export const InsightDisplayModule: React.FC<InsightDisplayModuleProps> = ({ insight, onDrilldown }) => {
-  // Check if the chart data is in the new format (nested under 'chart' property)
-  // or the old format (directly in 'chart_data' property)
-  const chartData = insight.chart?.data || insight.chart_data || [];
+  // Handle both old and new format data structures
+  let chartData: ChartDataPoint[] = [];
+  
+  // New format (nested under 'chart' property)
+  if (insight.chart?.data) {
+    chartData = insight.chart.data;
+  }
+  // Old format (directly in 'chart_data' property with categories/values)
+  else if (insight.chart_data?.categories && insight.chart_data?.values) {
+    chartData = insight.chart_data.categories.map((name: string, i: number) => ({
+      name,
+      value: insight.chart_data.values[i]
+    }));
+  }
+  // Fallback to empty array if no data is available
+  else {
+    chartData = [];
+  }
+  
   const nccnTarget = insight.chart?.nccn_target || insight.benchmark || 65;
   
   // Apply colors to chart data
-  const colorizedChartData = chartData.map((d, i) => ({
+  const colorizedChartData = chartData.map((d: ChartDataPoint, i: number) => ({
     ...d,
     fill: ["#DC2626", "#2563EB", "#3B82F6", "#60A5FA", "#A5B4FC"][i % 5]
   }));
+
+  // Normalize suggestions to handle both string[] and Suggestion[] formats
+  const normalizedSuggestions = insight.suggestions 
+    ? (typeof insight.suggestions[0] === 'string' 
+        ? insight.suggestions as string[]
+        : (insight.suggestions as any[]).map(s => s.text || s.toString()))
+    : (insight.action_steps && Array.isArray(insight.action_steps) 
+        ? (typeof insight.action_steps[0] === 'string'
+            ? insight.action_steps
+            : insight.action_steps.map(step => typeof step === 'string' ? step : step.text || ''))
+        : []);
 
   return (
     <section className="bg-white border border-gray-200 rounded-xl shadow p-4 space-y-4">
@@ -91,7 +118,7 @@ export const InsightDisplayModule: React.FC<InsightDisplayModuleProps> = ({ insi
             <Tooltip wrapperClassName="text-xs" cursor={{ fill: '#f3f4f6' }} />
             <ReferenceLine y={nccnTarget} stroke="#1d4ed8" strokeDasharray="4 2" />
             <Bar dataKey="value" radius={[4, 4, 0, 0]}>
-              {colorizedChartData.map((entry, index) => (
+              {colorizedChartData.map((entry: any, index: number) => (
                 <Cell key={`cell-${index}`} fill={entry.fill} />
               ))}
             </Bar>
@@ -119,7 +146,7 @@ export const InsightDisplayModule: React.FC<InsightDisplayModuleProps> = ({ insi
       <div className="space-y-2 pt-4 border-t border-gray-100 mt-6">
         <h4 className="text-sm font-semibold text-gray-700">Action Steps</h4>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {insight.suggestions.map((suggestion, idx) => (
+          {normalizedSuggestions.map((suggestion, idx) => (
             <button key={idx} className="text-left text-sm text-blue-800 font-medium bg-blue-50 hover:bg-blue-100 rounded-md px-4 py-2 shadow-sm">
               {suggestion}
             </button>

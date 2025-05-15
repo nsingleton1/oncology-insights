@@ -5,14 +5,18 @@ export interface InsightData {
   cohort: string;
   insight_type: string;
   summary: string;
-  chart: ChartData;
-  financial_impact: FinancialImpact;
-  clinical_impact: ClinicalImpact;
-  weighted_score: number;
-  action_steps: ActionStep[];
-  drilldowns: Drilldown[];
-  suggestions?: Suggestion[];
+  chart?: ChartData;
+  chart_data?: any; // For backward compatibility with the old format
+  benchmark?: number; // For backward compatibility 
+  financial_impact: FinancialImpact | number; // Allow number for backward compatibility
+  financial_impact_description?: string; // For backward compatibility
+  clinical_impact?: ClinicalImpact;
+  weighted_score?: number;
+  action_steps: string[] | ActionStep[]; // Allow string[] for backward compatibility
+  drilldowns?: Drilldown[];
+  suggestions?: string[] | Suggestion[]; // Allow string[] for backward compatibility
   peer_comparison?: PeerComparison;
+  recommendation?: string; // For backward compatibility
 }
 
 // Chart data structure
