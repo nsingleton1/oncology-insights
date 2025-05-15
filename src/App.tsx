@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import SidebarModule from './components/SidebarModule';
-import InsightDisplayModule from './components/InsightDisplayModule';
+import { InsightDisplayModule } from './components/InsightDisplayModule';
 import TabManagementModule from './components/TabManagementModule';
-import CohortInputModule from './components/CohortInputModule';
+import { CohortInputModule } from './components/CohortInputModule';
 import LoadingSimulationModule from './components/LoadingSimulationModule';
 
 // Types

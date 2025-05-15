@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { SidebarModule } from "./components/SidebarModule";
 import { InsightDisplayModule } from "./components/InsightDisplayModule";
 import { CohortInputModule } from "./components/CohortInputModule";
-import { TabManagementModule } from "./components/TabManagementModule";
+import TabManagementModule from "./components/TabManagementModule";
 import { LoadingSimulationModule } from "./components/LoadingSimulationModule";
 import { NotificationModule } from "./components/NotificationModule";
 import { InsightData, CohortPrompt, Tab } from "./types";

@@ -76,4 +76,6 @@ export const CohortInputModule: React.FC<CohortInputModuleProps> = ({ onCohortSe
   );
 };
 
+// Export both named and default for compatibility
+export { CohortInputModule };
 export default CohortInputModule; 

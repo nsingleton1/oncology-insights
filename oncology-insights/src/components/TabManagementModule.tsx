@@ -75,4 +75,7 @@ export const TabManagementModule: React.FC<TabManagementModuleProps> = ({
       </div>
     </div>
   );
-}; 
+};
+
+// Add default export to fix import issues
+export default TabManagementModule; 
