@@ -3,6 +3,7 @@
 [build]
 builder = "dockerfile"
 dockerfile = "Dockerfile"
+buildCommand = "npm install -g react-scripts serve && npm install && npm run build"
 
 [deploy]
 startCommand = "/start.sh"
@@ -15,5 +16,7 @@ startupDelay = "15s"
 
 [environment]
 PORT = "80"
+NODE_ENV = "production"
+npm_config_legacy_peer_deps = "true"
 REACT_APP_ENVIRONMENT = "production"
 REACT_APP_VERSION = "railway-deployment" 
