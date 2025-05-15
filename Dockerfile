@@ -35,6 +35,9 @@ RUN if [ -d "public/data/insights" ]; then \
 # Production stage
 FROM nginx:alpine
 
+# Install curl for healthcheck
+RUN apk add --no-cache curl
+
 # Ensure the html directory exists
 RUN mkdir -p /usr/share/nginx/html
 
@@ -48,6 +51,13 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 RUN if [ ! -f /usr/share/nginx/html/index.html ]; then \
     echo '<html><body><h1>Oncology Insights</h1><p>Application is being deployed. Please check back later.</p></body></html>' > /usr/share/nginx/html/index.html; \
 fi
+
+# Add a healthcheck file specifically for health monitoring
+RUN echo '{"status":"ok"}' > /usr/share/nginx/html/health.json
+
+# Add explicit health check
+HEALTHCHECK --interval=10s --timeout=5s --start-period=15s --retries=3 \
+  CMD curl -f http://localhost/ || exit 1
 
 # Expose port 80
 EXPOSE 80
