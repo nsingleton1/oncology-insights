@@ -11,6 +11,7 @@ coverage
 # Version control
 .git
 .gitignore
+.github
 
 # Development environment
 .env.local
