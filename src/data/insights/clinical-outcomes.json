@@ -8,11 +8,36 @@
     "type": "bar",
     "unit": "provider",
     "data": [
-      { "name": "Provider A", "value": 60, "gap": -5, "highlight": true },
-      { "name": "Provider B", "value": 57, "gap": -8, "highlight": false },
-      { "name": "Provider C", "value": 54, "gap": -11, "highlight": false },
-      { "name": "Provider D", "value": 58, "gap": -7, "highlight": false },
-      { "name": "Provider E", "value": 56, "gap": -9, "highlight": false }
+      {
+        "name": "Provider A",
+        "value": 60,
+        "gap": -5,
+        "highlight": true
+      },
+      {
+        "name": "Provider B",
+        "value": 57,
+        "gap": -8,
+        "highlight": false
+      },
+      {
+        "name": "Provider C",
+        "value": 54,
+        "gap": -11,
+        "highlight": false
+      },
+      {
+        "name": "Provider D",
+        "value": 58,
+        "gap": -7,
+        "highlight": false
+      },
+      {
+        "name": "Provider E",
+        "value": 56,
+        "gap": -9,
+        "highlight": false
+      }
     ],
     "benchmark": 65,
     "nccn_target": 70
@@ -77,4 +102,4 @@
       "drilldownLevel": 1
     }
   ]
-} 
+}

@@ -1,9 +1,9 @@
 const fs = require('fs');
 const path = require('path');
-const glob = require('glob');
+const { globSync } = require('glob');
 
 // Get all JSON files in the data directory
-const jsonFiles = glob.sync(path.join(__dirname, '../src/data/insights/*.json'));
+const jsonFiles = globSync(path.join(__dirname, '../src/data/insights/*.json'));
 
 // Check for required properties across all files
 console.log('Validating data files...');
