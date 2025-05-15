@@ -4,7 +4,7 @@ FROM node:18-alpine
 WORKDIR /app
 
 # Install global dependencies first
-RUN npm install -g react-scripts serve
+RUN npm install -g react-scripts serve typescript
 
 # Copy package files
 COPY package.json package-lock.json* ./
@@ -12,12 +12,16 @@ COPY package.json package-lock.json* ./
 # Install dependencies
 RUN npm install --legacy-peer-deps
 
+# Explicitly install TypeScript
+RUN npm install --save-dev typescript@4.9.5
+
 # Copy source code
 COPY . .
 
 # For diagnostics - check if dependencies are installed
 RUN npm list react-scripts || true
 RUN npm list serve || true
+RUN npm list typescript || true
 
 # Ensure script files exist
 RUN mkdir -p scripts
