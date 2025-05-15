@@ -28,8 +28,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "prebuild": "node scripts/create-placeholder-images.js || echo 'Placeholder script skipped' && node scripts/verify-dependencies.js || echo 'Verify script skipped' && node scripts/verify-data-files.js || echo 'Data validation script skipped'",
+    "start": "node scripts/ensure-data-files.js && react-scripts start",
+    "prebuild": "node scripts/create-placeholder-images.js || echo 'Placeholder script skipped' && node scripts/verify-dependencies.js || echo 'Verify script skipped' && node scripts/verify-data-files.js || echo 'Data validation script skipped' && node scripts/ensure-data-files.js || echo 'Data files script skipped'",
     "build": "react-scripts build",
     "postbuild": "node scripts/prepare-deploy.js || echo 'Prepare deploy script skipped' && node scripts/post-deployment.js || echo 'Post deployment script skipped'",
     "test": "react-scripts test",
@@ -37,6 +37,7 @@
     "serve": "serve -s build",
     "verify": "node scripts/verify-dependencies.js || echo 'Verify script skipped'",
     "verify:data": "node scripts/verify-data-files.js",
+    "ensure:data": "node scripts/ensure-data-files.js",
     "docker:test": "node scripts/test-docker-build.js",
     "edit:add": "git add .",
     "git::commit": "git commit -m",

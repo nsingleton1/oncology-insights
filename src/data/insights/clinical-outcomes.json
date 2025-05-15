@@ -1,0 +1,41 @@
+{
+  "id": "clinical-outcomes-overview",
+  "display_name": "Clinical Outcomes",
+  "cohort": "Patients with metastatic solid tumors initiating 1st Line treatment (2024-2025)",
+  "insight_type": "Clinical Outcomes by Provider",
+  "summary": "Overall survival rates show 5% variation across sites, with significant differences in progression-free survival by regimen and provider.",
+  "chart_data": {
+    "categories": ["Provider A", "Provider B", "Provider C", "Provider D", "Provider E"],
+    "values": [60, 57, 54, 58, 56],
+    "peer_values": [65, 65, 65, 65, 65],
+    "target_values": [70, 70, 70, 70, 70]
+  },
+  "benchmark": 65,
+  "financial_impact": 0,
+  "financial_impact_description": "Standardizing outcomes could lead to improved patient care without direct financial impact.",
+  "action_steps": [
+    "Compare outcomes by regimen and disease subtype",
+    "Analyze progression-free survival by provider",
+    "Identify best practices from top-performing providers"
+  ],
+  "drilldowns": [
+    {
+      "label": "View by Payer Type",
+      "description": "Compare outcomes by payer type",
+      "jsonFile": "clinical-outcomes-by-payer.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "Compare Sites",
+      "description": "Compare outcomes by site",
+      "jsonFile": "clinical-outcomes-by-site.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "Variance by Regimen",
+      "description": "Compare outcomes by regimen",
+      "jsonFile": "clinical-outcomes-by-regimen.json",
+      "drilldownLevel": 1
+    }
+  ]
+} 
