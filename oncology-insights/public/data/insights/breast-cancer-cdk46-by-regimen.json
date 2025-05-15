@@ -1,0 +1,126 @@
+{
+  "id": "breast-cancer-cdk46-by-regimen-main",
+  "display_name": "ER+/HER2- MBC Regimen Margins",
+  "cohort": "ER+/HER2- Metastatic Breast Cancer, 2nd Line, by Regimen (2024–2025)",
+  "insight_type": "Margin Analysis",
+  "summary": "CDK4/6i + Fulvestrant regimen delivers 35% higher margins than other regimens for ER+/HER2- MBC patients. A 12% increase in utilization could yield $210,000/year.",
+  "chart": {
+    "type": "bar",
+    "unit": "regimen",
+    "data": [
+      { "name": "CDK4/6i + Fulvestrant", "value": 85, "gap": 35, "highlight": true },
+      { "name": "CDK4/6i + AI", "value": 72, "gap": 22, "highlight": false },
+      { "name": "Fulvestrant Mono", "value": 50, "gap": 0, "highlight": false },
+      { "name": "Chemo-based", "value": 42, "gap": -8, "highlight": true },
+      { "name": "AI Mono", "value": 38, "gap": -12, "highlight": false }
+    ],
+    "benchmark": 50,
+    "nccn_target": 50
+  },
+  "financial_impact": {
+    "annual_opportunity": "$210,000/year",
+    "math": "$210,000/year = 12% increase × 50 patients × $35,000 margin difference"
+  },
+  "clinical_impact": {
+    "description": "CDK4/6i regimens provide substantial clinical benefits over monotherapy options.",
+    "metrics": [
+      {
+        "type": "PFS",
+        "value": "+13.5 months",
+        "description": "Superior progression-free survival for CDK4/6i + Fulvestrant"
+      },
+      {
+        "type": "OS",
+        "value": "+10.2 months",
+        "description": "Overall survival benefit vs. monotherapy"
+      },
+      {
+        "type": "ORR",
+        "value": "+24%",
+        "description": "Higher objective response rate"
+      },
+      {
+        "type": "QoL",
+        "value": "+18%",
+        "description": "Better quality of life scores"
+      },
+      {
+        "type": "ToT",
+        "value": "+45%",
+        "description": "Longer time on treatment"
+      }
+    ],
+    "quantitative": "+13.5 months PFS"
+  },
+  "peer_comparison": {
+    "description": "Your practice uses CDK4/6i + Fulvestrant in only 28% of eligible patients, compared to 45% among peers. This represents a $335,000/year margin opportunity.",
+    "peer_benchmark": 45,
+    "financial_impact": {
+      "annual_opportunity": "$335,000/year",
+      "math": "$335,000/year = 17% increase × 56 patients × $35,000 margin difference"
+    },
+    "action_steps": [
+      {
+        "text": "Schedule regimen selection training for oncology team",
+        "icon": "users"
+      },
+      {
+        "text": "Develop CDK4/6i + Fulvestrant clinical pathway",
+        "icon": "document"
+      },
+      {
+        "text": "Implement regimen margin dashboard by provider",
+        "icon": "chart"
+      },
+      {
+        "text": "Create automated alerts for eligible patients",
+        "icon": "alert"
+      }
+    ]
+  },
+  "weighted_score": 94,
+  "action_steps": [
+    {
+      "text": "Identify patients eligible for regimen optimization",
+      "icon": "flag"
+    },
+    {
+      "text": "Update order sets to prioritize higher-margin regimens",
+      "icon": "document"
+    },
+    {
+      "text": "Implement regimen-specific financial counseling",
+      "icon": "clipboard"
+    },
+    {
+      "text": "Analyze payer mix impact on regimen margins",
+      "icon": "chart-line"
+    }
+  ],
+  "suggestions": [
+    {
+      "text": "Review prior authorization processes for CDK4/6i regimens",
+      "icon": "document"
+    }
+  ],
+  "drilldowns": [
+    {
+      "label": "View by Provider",
+      "cohort": "ER+/HER2- MBC, 2L, by Provider Regimen Selection",
+      "jsonFile": "breast-cancer-cdk46-by-provider-regimen.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "Compare Payer Coverage",
+      "cohort": "ER+/HER2- MBC, 2L, by Payer Regimen Coverage",
+      "jsonFile": "breast-cancer-cdk46-by-payer-regimen.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "Margin Detail Analysis",
+      "cohort": "ER+/HER2- MBC, 2L, Regimen Margin Components",
+      "jsonFile": "breast-cancer-cdk46-regimen-margins.json",
+      "drilldownLevel": 1
+    }
+  ]
+} 

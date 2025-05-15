@@ -1,0 +1,38 @@
+{
+  "cohort": "ER+/HER2- MBC, 2L, Site B, by Provider (2024–2025)",
+  "insight_type": "Provider Variation at Site B",
+  "summary": "Dr. Johnson has a 18% CDK4/6i utilization rate, 17% below Site B average. Targeted intervention could yield $30,000/year.",
+  "chart": {
+    "type": "bar",
+    "unit": "provider",
+    "data": [
+      { "name": "Dr. Johnson", "value": 18, "gap": -17, "highlight": true },
+      { "name": "Dr. Kim", "value": 42, "gap": 7, "highlight": false },
+      { "name": "Dr. Garcia", "value": 45, "gap": 10, "highlight": false }
+    ],
+    "benchmark": 35,
+    "nccn_target": 35
+  },
+  "financial_impact": {
+    "annual_opportunity": "$30,000/year",
+    "math": "$30,000/year = 8 patients × $3,750 margin per patient"
+  },
+  "clinical_impact": {
+    "description": "Improving Dr. Johnson's utilization increases survival.",
+    "quantitative": "+7.4 months PFS"
+  },
+  "peer_comparison": {
+    "description": "Site B average is 35%.",
+    "peer_benchmark": 35
+  },
+  "weighted_score": 74,
+  "action_steps": [
+    "Schedule 1:1 meeting with Dr. Johnson",
+    "Provide CDK4/6i clinical pathway resources",
+    "Review Dr. Johnson's patient selection criteria"
+  ],
+  "suggestions": [
+    "Share best practices from Dr. Kim with Dr. Johnson"
+  ],
+  "drilldowns": []
+} 

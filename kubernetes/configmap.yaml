@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: oncoinsights-config
+  namespace: oncology
+data:
+  REACT_APP_API_URL: "https://api.oncology-domain.com"
+  REACT_APP_ENVIRONMENT: "production"
+  REACT_APP_VERSION: "${VERSION}" 

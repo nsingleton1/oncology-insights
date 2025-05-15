@@ -1,0 +1,124 @@
+{
+  "cohort": "Medicare NSCLC patients, anti-PD-1 in 2L+ (2024-2025)",
+  "insight_type": "Utilization Gap",
+  "summary": "Anti-PD-1 utilization in Medicare NSCLC 2L+ is 58%, below NCCN guidance of 65%. Closing this gap could yield $1.8M/year.",
+  "chart": {
+    "type": "bar",
+    "unit": "provider",
+    "data": [
+      { "name": "Provider A", "value": 62, "gap": -3, "highlight": false },
+      { "name": "Provider B", "value": 58, "gap": -7, "highlight": false },
+      { "name": "Provider C", "value": 45, "gap": -20, "highlight": true },
+      { "name": "Provider D", "value": 60, "gap": -5, "highlight": false },
+      { "name": "Provider E", "value": 57, "gap": -8, "highlight": false }
+    ],
+    "benchmark": 65,
+    "nccn_target": 65
+  },
+  "financial_impact": {
+    "annual_opportunity": "$1,800,000/year",
+    "math": "$1,800,000/year = 120 patients × $15,000 margin per patient"
+  },
+  "clinical_impact": {
+    "description": "Anti-PD-1 therapy improves multiple outcomes in 2L+ NSCLC patients.",
+    "metrics": [
+      {
+        "type": "OS",
+        "value": "+13.8 months",
+        "description": "Median overall survival benefit"
+      },
+      {
+        "type": "PFS",
+        "value": "+8.4 months",
+        "description": "Median progression-free survival benefit"
+      },
+      {
+        "type": "5-yr",
+        "value": "+21%",
+        "description": "Improved 5-year survival rate"
+      },
+      {
+        "type": "AEs",
+        "value": "-15%",
+        "description": "Reduced severe adverse events"
+      },
+      {
+        "type": "QoL",
+        "value": "+18%",
+        "description": "Improved quality of life scores"
+      }
+    ],
+    "quantitative": "+13.8 months OS"
+  },
+  "peer_comparison": {
+    "description": "Anti-PD-1 utilization in Medicare NSCLC 2L+ is 58%, below peer average of 72%. Provider C is significantly underperforming at 45%. Closing this gap could yield $2.1M/year.",
+    "peer_benchmark": 72,
+    "financial_impact": {
+      "annual_opportunity": "$2,100,000/year",
+      "math": "$2,100,000/year = 140 patients × $15,000 margin per patient"
+    },
+    "action_steps": [
+      {
+        "text": "Analyze Provider C's specific barriers to anti-PD-1 utilization",
+        "icon": "chart-line"
+      },
+      {
+        "text": "Schedule case review with top performers (Providers A and D)",
+        "icon": "calendar"
+      },
+      {
+        "text": "Develop anti-PD-1 peer comparison dashboard",
+        "icon": "chart"
+      },
+      {
+        "text": "Implement weekly checkpoint meetings with Provider C",
+        "icon": "users"
+      }
+    ]
+  },
+  "weighted_score": 95,
+  "action_steps": [
+    {
+      "text": "Identify NSCLC patients eligible for anti-PD-1 therapy",
+      "icon": "flag"
+    },
+    {
+      "text": "Focus intervention on Provider C's workflow",
+      "icon": "clipboard"
+    },
+    {
+      "text": "Implement PD-L1 testing workflow improvements",
+      "icon": "document"
+    }
+  ],
+  "suggestions": [
+    {
+      "text": "Review Medicare coverage determination process",
+      "icon": "document"
+    },
+    {
+      "text": "Develop anti-PD-1 utilization tracking dashboard",
+      "icon": "chart"
+    }
+  ],
+  "drilldowns": [
+    {
+      "label": "View by Payer Type",
+      "cohort": "NSCLC patients, anti-PD-1 in 2L+, by Payer",
+      "jsonFile": "nsclc-pd1-by-payer.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "Compare Sites",
+      "cohort": "NSCLC patients, anti-PD-1 in 2L+, by Site",
+      "jsonFile": "nsclc-pd1-by-site.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "Variance by Regimen",
+      "cohort": "NSCLC patients, anti-PD-1 in 2L+, by Regimen",
+      "jsonFile": "nsclc-pd1-by-regimen.json",
+      "drilldownLevel": 1
+    }
+  ]
+} 

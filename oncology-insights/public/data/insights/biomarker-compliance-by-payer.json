@@ -1,0 +1,137 @@
+{
+  "id": "biomarker-compliance-by-payer",
+  "display_name": "Biomarker Testing by Payer",
+  "cohort": "Biomarker Testing, by Payer (2024–2025)",
+  "insight_type": "Precision Medicine Utilization",
+  "summary": "Testing compliance shows strong payer variation: Commercial 84%, Medicare 72%, and Medicaid 58%. Solving authorization barriers could generate $280,000 in annual value.",
+  "chart": {
+    "type": "bar",
+    "unit": "payer",
+    "data": [
+      { "name": "Commercial", "value": 84, "gap": 9, "highlight": false },
+      { "name": "Medicare", "value": 72, "gap": -3, "highlight": false },
+      { "name": "Medicare Advantage", "value": 68, "gap": -7, "highlight": false },
+      { "name": "Medicaid", "value": 58, "gap": -17, "highlight": true },
+      { "name": "Exchange", "value": 64, "gap": -11, "highlight": true },
+      { "name": "VA/Tricare", "value": 76, "gap": 1, "highlight": false }
+    ],
+    "benchmark": 75,
+    "nccn_target": 90
+  },
+  "financial_impact": {
+    "annual_opportunity": "$280,000/year",
+    "math": "$280,000/year = 14% avg testing gap (lagging payers) × 58 patients × $34,500 precision therapy value"
+  },
+  "clinical_impact": {
+    "description": "Reducing payer-based disparities in biomarker testing improves care equity and outcomes.",
+    "metrics": [
+      {
+        "type": "PFS",
+        "value": "+5.1 months",
+        "description": "Improved progression-free survival with matched therapies"
+      },
+      {
+        "type": "OS",
+        "value": "+7.8 months",
+        "description": "Overall survival benefit with biomarker-guided treatment"
+      },
+      {
+        "type": "ORR",
+        "value": "+32%",
+        "description": "Higher objective response rate with targeted therapies"
+      },
+      {
+        "type": "TFT",
+        "value": "-42%",
+        "description": "Reduced time from testing to treatment"
+      },
+      {
+        "type": "CE",
+        "value": "+28%",
+        "description": "Improved care equity across payer types"
+      }
+    ],
+    "quantitative": "+7.8 months OS"
+  },
+  "peer_comparison": {
+    "description": "Top-performing practices achieve >80% biomarker testing compliance across all payer types through streamlined prior authorization processes.",
+    "peer_benchmark": 80,
+    "financial_impact": {
+      "annual_opportunity": "$345,000/year",
+      "math": "$345,000/year = $280,000 direct therapy value + $65,000 operational efficiency"
+    },
+    "action_steps": [
+      {
+        "text": "Implement dedicated prior authorization team for biomarker testing",
+        "icon": "users"
+      },
+      {
+        "text": "Develop payer-specific biomarker testing pathways",
+        "icon": "document"
+      },
+      {
+        "text": "Create automated prior authorization submission tool",
+        "icon": "cog"
+      },
+      {
+        "text": "Negotiate biomarker testing agreements with key payers",
+        "icon": "handshake"
+      }
+    ]
+  },
+  "weighted_score": 92,
+  "action_steps": [
+    {
+      "text": "Implement dedicated prior authorization team for Medicaid patients",
+      "icon": "users"
+    },
+    {
+      "text": "Deploy automated payer-specific testing protocols",
+      "icon": "cog"
+    },
+    {
+      "text": "Develop financial assistance program for testing",
+      "icon": "cash"
+    },
+    {
+      "text": "Create payer liaison role for complex biomarker cases",
+      "icon": "user"
+    }
+  ],
+  "suggestions": [
+    {
+      "text": "Analyze denial patterns by payer and test type",
+      "icon": "search"
+    },
+    {
+      "text": "Evaluate preauthorization success rates by staff member",
+      "icon": "chart"
+    }
+  ],
+  "drilldowns": [
+    {
+      "label": "Medicaid Detail",
+      "cohort": "Medicaid Biomarker Testing",
+      "jsonFile": "biomarker-compliance-medicaid.json",
+      "drilldownLevel": 2
+    },
+    {
+      "label": "By Testing Method",
+      "cohort": "Biomarker Testing by Method",
+      "jsonFile": "biomarker-compliance-by-method.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "By Cancer Type",
+      "cohort": "Biomarker Testing by Cancer Type",
+      "jsonFile": "biomarker-compliance-by-cancer.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "Overall Compliance",
+      "cohort": "Biomarker Testing Compliance",
+      "jsonFile": "biomarker-compliance.json",
+      "drilldownLevel": 0
+    }
+  ]
+} 

@@ -1,0 +1,27 @@
+{
+  "id": "breast-cancer-cdk46-by-regimen",
+  "display_name": "ER+/HER2- MBC (By Regimen)",
+  "cohort": "ER+/HER2- Metastatic Breast Cancer, All Patients, by Regimen, Q1 2023",
+  "insight_type": "Treatment Patterns by Regimen",
+  "summary": "Abemaciclib is the most commonly used CDK4/6 inhibitor (52%) followed by palbociclib (28%) and ribociclib (20%). All are guideline-appropriate options.",
+  "recommendation": "Continue current CDK4/6 inhibitor selection patterns while monitoring for any emerging efficacy or cost differences between agents.",
+  "financial_impact": 0,
+  "financial_impact_description": "Current regimen selection practices are appropriate based on the available clinical and economic data.",
+  "peer_financial_impact": 50000,
+  "peer_financial_impact_description": "Minor opportunity of $50,000 annually through optimized agent selection compared to peers.",
+  "action_steps": [
+    "Continue to monitor comparative efficacy data between CDK4/6 inhibitors",
+    "Evaluate the clinical and financial impact of current agent selection"
+  ],
+  "peer_action_steps": [
+    "Review agent selection criteria and compare to best-performing organizations",
+    "Consider potential value-based contracts for preferred agents"
+  ],
+  "chart_data": {
+    "categories": ["Abemaciclib", "Palbociclib", "Ribociclib", "Everolimus", "Other"],
+    "values": [52, 28, 20, 0, 0],
+    "peer_values": [45, 30, 25, 0, 0],
+    "target_values": [50, 30, 20, 0, 0]
+  },
+  "drilldowns": []
+} 

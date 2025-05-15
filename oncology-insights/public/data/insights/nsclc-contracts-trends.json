@@ -1,0 +1,135 @@
+{
+  "id": "nsclc-contracts-trends",
+  "display_name": "NSCLC Contract Metrics Trends",
+  "cohort": "NSCLC Contract Metrics Historical Trends (2022–2025)",
+  "insight_type": "Metrics Trend Analysis",
+  "summary": "Hospice referral and treatment concordance metrics have declined over the past 3 years, while biomarker testing has improved. Overall contract performance is down 8% from peak.",
+  "chart": {
+    "type": "bar",
+    "unit": "quarter",
+    "data": [
+      { "name": "Q1 2022", "value": 81, "gap": 8, "highlight": false },
+      { "name": "Q2 2022", "value": 79, "gap": 6, "highlight": false },
+      { "name": "Q3 2022", "value": 74, "gap": 1, "highlight": false },
+      { "name": "Q4 2022", "value": 76, "gap": 3, "highlight": false },
+      { "name": "Q1 2023", "value": 77, "gap": 4, "highlight": false },
+      { "name": "Q2 2023", "value": 75, "gap": 2, "highlight": false },
+      { "name": "Q3 2023", "value": 72, "gap": -1, "highlight": false },
+      { "name": "Q4 2023", "value": 70, "gap": -3, "highlight": true },
+      { "name": "Q1 2024", "value": 69, "gap": -4, "highlight": true },
+      { "name": "Q2 2024", "value": 68, "gap": -5, "highlight": true }
+    ],
+    "benchmark": 73,
+    "nccn_target": 80
+  },
+  "financial_impact": {
+    "annual_opportunity": "$420,000/year",
+    "math": "$420,000/year = 3 underperforming metrics × $140,000 per metric bonus payment"
+  },
+  "clinical_impact": {
+    "description": "Reversing the decline in contract metrics will have significant clinical benefits.",
+    "metrics": [
+      {
+        "type": "OS",
+        "value": "+3.8 months",
+        "description": "Potential survival benefit from restored metrics"
+      },
+      {
+        "type": "Hosp",
+        "value": "-42%",
+        "description": "Potential reduction in hospitalization rates"
+      },
+      {
+        "type": "ED",
+        "value": "-35%",
+        "description": "Potential reduction in ED visits"
+      },
+      {
+        "type": "Ref",
+        "value": "+28%",
+        "description": "Improved hospice referral timing"
+      },
+      {
+        "type": "QoL",
+        "value": "+18%",
+        "description": "Improved quality of life scores"
+      }
+    ],
+    "quantitative": "-42% hospitalizations"
+  },
+  "peer_comparison": {
+    "description": "While your performance has declined 8% over 3 years, top-performing practices have maintained or improved their metrics, achieving an average of 85% compliance.",
+    "peer_benchmark": 85,
+    "financial_impact": {
+      "annual_opportunity": "$650,000/year",
+      "math": "$650,000/year = missed bonus ($420,000) + additional shared savings ($230,000)"
+    },
+    "action_steps": [
+      {
+        "text": "Conduct metric decline root cause analysis",
+        "icon": "chart-line"
+      },
+      {
+        "text": "Implement quarterly metric review meetings",
+        "icon": "users"
+      },
+      {
+        "text": "Create metric dashboards with predictive alerts",
+        "icon": "chart"
+      },
+      {
+        "text": "Reinstate treatment pathways compliance monitoring",
+        "icon": "document"
+      }
+    ]
+  },
+  "weighted_score": 97,
+  "action_steps": [
+    {
+      "text": "Conduct detailed analysis of declining metrics",
+      "icon": "chart-line"
+    },
+    {
+      "text": "Implement early intervention for negative metric trends",
+      "icon": "flag"
+    },
+    {
+      "text": "Restore hospice referral workflows from 2022",
+      "icon": "document"
+    },
+    {
+      "text": "Create physician-specific performance improvement plans",
+      "icon": "clipboard"
+    }
+  ],
+  "suggestions": [
+    {
+      "text": "Interview staff from 2022 Q1-Q2 high-performance period",
+      "icon": "users"
+    },
+    {
+      "text": "Analyze staffing changes that correlate with metric decline",
+      "icon": "chart"
+    }
+  ],
+  "drilldowns": [
+    {
+      "label": "View by Payer Type",
+      "cohort": "NSCLC Contract Performance by Payer",
+      "jsonFile": "nsclc-contracts-by-payer.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "Compare Sites",
+      "cohort": "NSCLC Contract Metrics by Site",
+      "jsonFile": "nsclc-contracts-by-site.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "Variance by Regimen",
+      "cohort": "NSCLC Contract Performance by Provider",
+      "jsonFile": "nsclc-contracts-by-provider.json",
+      "drilldownLevel": 1
+    }
+  ]
+} 

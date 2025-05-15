@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: oncoinsights
+  namespace: oncology
+  labels:
+    app: oncoinsights
+spec:
+  selector:
+    app: oncoinsights
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      name: http
+  type: ClusterIP 

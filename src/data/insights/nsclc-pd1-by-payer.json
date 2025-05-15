@@ -1,0 +1,29 @@
+{
+  "id": "nsclc-pd1-by-payer",
+  "display_name": "NSCLC PD-L1≥50% (By Payer)",
+  "cohort": "NSCLC PD-L1 ≥ 50%, First Line, by Payer, Q1 2023",
+  "insight_type": "Treatment Patterns by Payer",
+  "summary": "Pembrolizumab monotherapy utilization varies by payer, with Medicare patients receiving guideline-concordant care at 82% while Commercial patients are at only 68%.",
+  "recommendation": "Address payer-specific barriers to pembrolizumab monotherapy, particularly focusing on commercial payers.",
+  "financial_impact": 210000,
+  "financial_impact_description": "Improving pembrolizumab monotherapy utilization in patients with commercial insurance could generate approximately $210,000 in annual savings.",
+  "peer_financial_impact": 250000,
+  "peer_financial_impact_description": "Peer organizations achieve better utilization with commercial payers, representing a $250,000 opportunity.",
+  "action_steps": [
+    "Analyze approval rates and rejection reasons for pembrolizumab monotherapy by commercial payers",
+    "Develop payer-specific prior authorization support",
+    "Review testing and referral patterns for commercially insured patients"
+  ],
+  "peer_action_steps": [
+    "Benchmark against organizations with higher commercial payer utilization",
+    "Consider value-based contracts that incentivize appropriate care",
+    "Develop specific strategies for working with challenging payers"
+  ],
+  "chart_data": {
+    "categories": ["Medicare", "Commercial", "Medicaid", "Uninsured", "Other"],
+    "values": [82, 68, 75, 70, 72],
+    "peer_values": [85, 80, 78, 70, 75],
+    "target_values": [85, 85, 85, 75, 80]
+  },
+  "drilldowns": []
+} 

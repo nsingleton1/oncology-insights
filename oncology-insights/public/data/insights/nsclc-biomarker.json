@@ -1,0 +1,140 @@
+{
+  "id": "nsclc-biomarker",
+  "display_name": "NSCLC Biomarker Testing",
+  "cohort": "NSCLC, Biomarker Testing Compliance (2024–2025)",
+  "insight_type": "Precision Medicine Utilization",
+  "summary": "NSCLC biomarker testing achieves 87% overall compliance, but with significant biomarker-specific variation: EGFR 95%, ALK 92%, PD-L1 90%, but ROS1 72%, MET 68%, and NTRK 45%.",
+  "chart": {
+    "type": "bar",
+    "unit": "biomarker",
+    "data": [
+      { "name": "EGFR", "value": 95, "gap": 5, "highlight": false },
+      { "name": "ALK", "value": 92, "gap": 2, "highlight": false },
+      { "name": "PD-L1", "value": 90, "gap": 0, "highlight": false },
+      { "name": "ROS1", "value": 72, "gap": -18, "highlight": true },
+      { "name": "MET", "value": 68, "gap": -22, "highlight": true },
+      { "name": "KRAS", "value": 76, "gap": -14, "highlight": false },
+      { "name": "BRAF", "value": 78, "gap": -12, "highlight": false },
+      { "name": "NTRK", "value": 45, "gap": -45, "highlight": true },
+      { "name": "RET", "value": 64, "gap": -26, "highlight": true }
+    ],
+    "benchmark": 90,
+    "nccn_target": 95
+  },
+  "financial_impact": {
+    "annual_opportunity": "$365,000/year",
+    "math": "$365,000/year = 25% avg testing gap (emerging biomarkers) × 42 eligible patients × $34,700 precision therapy value"
+  },
+  "clinical_impact": {
+    "description": "Comprehensive NSCLC biomarker testing improves outcomes through expanded targeted therapy options.",
+    "metrics": [
+      {
+        "type": "PFS",
+        "value": "+9.2 months",
+        "description": "Improved progression-free survival with matched therapies"
+      },
+      {
+        "type": "OS",
+        "value": "+12.6 months",
+        "description": "Overall survival benefit with biomarker-guided treatment"
+      },
+      {
+        "type": "ORR",
+        "value": "+47%",
+        "description": "Higher objective response rate with matched therapies"
+      },
+      {
+        "type": "QoL",
+        "value": "+32%",
+        "description": "Improved quality of life scores"
+      },
+      {
+        "type": "Hosp",
+        "value": "-38%",
+        "description": "Reduced hospitalization rate"
+      }
+    ],
+    "quantitative": "+12.6 months OS"
+  },
+  "peer_comparison": {
+    "description": "Top-performing NSCLC programs achieve >90% comprehensive biomarker panel testing rates through reflex testing protocols.",
+    "peer_benchmark": 90,
+    "financial_impact": {
+      "annual_opportunity": "$420,000/year",
+      "math": "$420,000/year = 28% gap to peer benchmark × 48 patients × $31,500 improved care value"
+    },
+    "action_steps": [
+      {
+        "text": "Implement NSCLC-specific reflex molecular testing panel",
+        "icon": "document"
+      },
+      {
+        "text": "Create comprehensive testing protocol for all lung cancer patients",
+        "icon": "clipboard"
+      },
+      {
+        "text": "Develop automated biomarker tracking system",
+        "icon": "chart"
+      },
+      {
+        "text": "Establish NSCLC molecular tumor board",
+        "icon": "users"
+      }
+    ]
+  },
+  "weighted_score": 95,
+  "action_steps": [
+    {
+      "text": "Implement comprehensive NGS panel as standard for all NSCLC",
+      "icon": "document"
+    },
+    {
+      "text": "Create provider education on emerging NSCLC biomarkers",
+      "icon": "users"
+    },
+    {
+      "text": "Develop liquid biopsy program for tissue-limited cases",
+      "icon": "flask"
+    },
+    {
+      "text": "Establish biomarker testing KPI tracking by provider",
+      "icon": "chart"
+    }
+  ],
+  "suggestions": [
+    {
+      "text": "Consider tissue preservation protocol optimization",
+      "icon": "clipboard"
+    },
+    {
+      "text": "Evaluate expanded RNA-based fusion testing",
+      "icon": "search"
+    }
+  ],
+  "drilldowns": [
+    {
+      "label": "By Provider",
+      "cohort": "NSCLC Testing by Provider",
+      "jsonFile": "nsclc-biomarker-by-provider.json",
+      "drilldownLevel": 3
+    },
+    {
+      "label": "By Testing Method",
+      "cohort": "NSCLC Testing by Method",
+      "jsonFile": "nsclc-biomarker-by-method.json",
+      "drilldownLevel": 3
+    },
+    {
+      "label": "All Biomarkers",
+      "cohort": "Biomarker Testing by Cancer Type",
+      "jsonFile": "biomarker-compliance-by-cancer.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "Overall Compliance",
+      "cohort": "Biomarker Testing Compliance",
+      "jsonFile": "biomarker-compliance.json",
+      "drilldownLevel": 0
+    }
+  ]
+} 

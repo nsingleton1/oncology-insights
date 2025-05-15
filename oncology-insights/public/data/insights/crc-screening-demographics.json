@@ -1,0 +1,131 @@
+{
+  "id": "crc-screening-demographics",
+  "display_name": "CRC Screening by Demographics",
+  "cohort": "Colorectal Cancer Screening by Demographics (2024–2025)",
+  "insight_type": "Demographic Analysis",
+  "summary": "Significant screening disparities exist across demographic groups. Medicare patients 65-75 have 82% screening rates vs. only 48% for patients 50-55, highlighting intervention opportunities.",
+  "chart": {
+    "type": "bar",
+    "unit": "demographic",
+    "data": [
+      { "name": "Medicare 65-75", "value": 82, "gap": 16, "highlight": false },
+      { "name": "Private 65-75", "value": 76, "gap": 10, "highlight": false },
+      { "name": "Private 55-65", "value": 68, "gap": 2, "highlight": false },
+      { "name": "Medicaid 55-65", "value": 55, "gap": -11, "highlight": true },
+      { "name": "Private 50-55", "value": 52, "gap": -14, "highlight": true },
+      { "name": "Medicaid 50-55", "value": 48, "gap": -18, "highlight": true }
+    ],
+    "benchmark": 66,
+    "nccn_target": 80
+  },
+  "financial_impact": {
+    "annual_opportunity": "$165,000/year",
+    "math": "$165,000/year = $85,000 in quality bonus payments + $80,000 in early detection treatment margin"
+  },
+  "clinical_impact": {
+    "description": "Addressing demographic disparities in screening can significantly improve overall outcomes.",
+    "metrics": [
+      {
+        "type": "5-yr",
+        "value": "+52%",
+        "description": "Potential improvement in 5-year survival rate for younger patients"
+      },
+      {
+        "type": "Stage",
+        "value": "-72%",
+        "description": "Potential reduction in late-stage diagnoses in <55 age group"
+      },
+      {
+        "type": "Equity",
+        "value": "+58%",
+        "description": "Improvement in screening equity across demographics"
+      },
+      {
+        "type": "Detect",
+        "value": "+8",
+        "description": "Additional early stage CRC cases detected annually"
+      },
+      {
+        "type": "Cost",
+        "value": "-$51,750",
+        "description": "Lower treatment costs per patient with early detection"
+      }
+    ],
+    "quantitative": "-72% late-stage diagnoses"
+  },
+  "peer_comparison": {
+    "description": "Top-performing practices achieve 68% screening rates among 50-55 year olds vs. your 48%. Their success stems from targeted outreach and dedicated patient navigation.",
+    "peer_benchmark": 68,
+    "financial_impact": {
+      "annual_opportunity": "$230,000/year",
+      "math": "$230,000/year = $120,000 in quality bonus payments + $110,000 in early detection treatment margin"
+    },
+    "action_steps": [
+      {
+        "text": "Implement age-specific outreach strategies for 50-55 cohort",
+        "icon": "users"
+      },
+      {
+        "text": "Develop Medicaid-specific navigation program",
+        "icon": "clipboard"
+      },
+      {
+        "text": "Create demographic-specific screening barriers assessment",
+        "icon": "chart"
+      },
+      {
+        "text": "Establish after-hours screening options for working adults",
+        "icon": "document"
+      }
+    ]
+  },
+  "weighted_score": 91,
+  "action_steps": [
+    {
+      "text": "Generate targeted outreach lists for 50-55 age group",
+      "icon": "flag"
+    },
+    {
+      "text": "Implement transportation assistance for Medicaid patients",
+      "icon": "users"
+    },
+    {
+      "text": "Create screening education materials for younger patients",
+      "icon": "document"
+    },
+    {
+      "text": "Develop Medicaid-specific FIT test distribution program",
+      "icon": "clipboard"
+    }
+  ],
+  "suggestions": [
+    {
+      "text": "Analyze successful Medicare outreach strategies for adaptation",
+      "icon": "chart-line"
+    },
+    {
+      "text": "Consider employer partnership program for 50-55 age group",
+      "icon": "users"
+    }
+  ],
+  "drilldowns": [
+    {
+      "label": "View by Payer Type",
+      "cohort": "Colorectal Cancer Screening by Insurance",
+      "jsonFile": "crc-screening-insurance.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "Compare Methods",
+      "cohort": "Colorectal Cancer Screening by Method",
+      "jsonFile": "crc-screening-methods.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "View Overview",
+      "cohort": "Colorectal Cancer Screening Gaps",
+      "jsonFile": "crc-screening-gaps.json",
+      "drilldownLevel": 0
+    }
+  ]
+} 

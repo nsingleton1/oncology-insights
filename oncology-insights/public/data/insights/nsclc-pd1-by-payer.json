@@ -1,0 +1,65 @@
+{
+  "id": "nsclc-pd1-by-payer",
+  "display_name": "NSCLC PD-L1≥50% (By Payer)",
+  "cohort": "NSCLC patients, anti-PD-1 in 2L+, by Payer (2024-2025)",
+  "insight_type": "Payer Hardship",
+  "summary": "Medicaid patients have only 42% anti-PD-1 utilization, 23% below peer average. Addressing access barriers could yield $950,000/year.",
+  "chart": {
+    "type": "bar",
+    "unit": "payer",
+    "data": [
+      { "name": "Commercial", "value": 72, "gap": 7, "highlight": false },
+      { "name": "Medicare", "value": 58, "gap": -7, "highlight": false },
+      { "name": "Medicaid", "value": 42, "gap": -23, "highlight": true },
+      { "name": "Medicare Advantage", "value": 54, "gap": -11, "highlight": false }
+    ],
+    "benchmark": 65,
+    "nccn_target": 65
+  },
+  "financial_impact": {
+    "annual_opportunity": "$950,000/year",
+    "math": "$950,000/year = 63 Medicaid patients × $15,000 margin per patient"
+  },
+  "clinical_impact": {
+    "description": "Improving Medicaid access to anti-PD-1 therapy improves survival.",
+    "quantitative": "+11.2 months OS"
+  },
+  "peer_comparison": {
+    "description": "Top-performing centers achieve 62% Medicaid anti-PD-1 utilization through specialized access programs. Your Medicaid rate of 42% is 20% below these leaders. Implementing peer strategies could yield $1,200,000/year in additional revenue while improving care equity.",
+    "peer_benchmark": 62,
+    "financial_impact": {
+      "annual_opportunity": "$1,200,000/year",
+      "math": "$1,200,000/year = 80 Medicaid patients × $15,000 margin per patient"
+    },
+    "action_steps": [
+      "Implement top-performer Medicaid specialty pharmacy workflow",
+      "Create dedicated Medicaid immunotherapy coordinator position",
+      "Develop peer-based appeals process for Medicaid denials",
+      "Establish accelerated Medicaid authorization pathway for eligible patients"
+    ]
+  },
+  "weighted_score": 90,
+  "action_steps": [
+    "Implement Medicaid patient navigation program",
+    "Review Medicaid prior authorization process",
+    "Connect Medicaid patients to assistance programs"
+  ],
+  "suggestions": [
+    "Negotiate with Medicaid for improved coverage",
+    "Develop payer-specific anti-PD-1 workflow"
+  ],
+  "drilldowns": [
+    {
+      "label": "Medicaid by Site",
+      "cohort": "NSCLC patients, anti-PD-1 in 2L+, Medicaid, by Site",
+      "jsonFile": "nsclc-pd1-medicaid-by-site.json",
+      "drilldownLevel": 2
+    },
+    {
+      "label": "Medicaid by Regimen",
+      "cohort": "NSCLC patients, anti-PD-1 in 2L+, Medicaid, by Regimen",
+      "jsonFile": "nsclc-pd1-medicaid-by-regimen.json",
+      "drilldownLevel": 2
+    }
+  ]
+} 

@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oncoinsights
+  namespace: oncology
+  labels:
+    app: oncoinsights
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: oncoinsights
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        app: oncoinsights
+    spec:
+      containers:
+        - name: oncoinsights
+          image: ${REGISTRY_URL}/oncoinsights:${VERSION}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+              name: http
+          envFrom:
+            - configMapRef:
+                name: oncoinsights-config
+          resources:
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+            requests:
+              cpu: "200m"
+              memory: "256Mi"
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            timeoutSeconds: 3
+      imagePullSecrets:
+        - name: registry-credentials 

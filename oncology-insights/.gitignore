@@ -1,0 +1,61 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env.local
+.env.*.local
+
+# IDE files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Local data
+/mock-api/*.local.json
+
+# Logs
+logs
+*.log
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Deployment
+/.railway
+/kubernetes/.env
+
+# Temporary files
+.tmp/
+/tmp
+
+# Local environment overrides
+.env.override
+.env.development.override
+.env.production.override

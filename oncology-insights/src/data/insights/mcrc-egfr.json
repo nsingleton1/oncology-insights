@@ -1,0 +1,41 @@
+{
+  "id": "mcrc-egfr-main",
+  "display_name": "mCRC EGFR (Main)",
+  "cohort": "mCRC, 2nd Line RAS WT (2024-2025)",
+  "insight_type": "Utilization Gap",
+  "summary": "Dr. Miller prescribes EGFR inhibitors to 28% of eligible mCRC patients, 42% below NCCN guidance. Closing this gap could yield $173,600/year.",
+  "chart": {
+    "type": "bar",
+    "unit": "provider",
+    "data": [
+      { "name": "Dr. Miller", "value": 28, "gap": -42, "highlight": true },
+      { "name": "Dr. Ahmed", "value": 52, "gap": -18, "highlight": false },
+      { "name": "Dr. Kim", "value": 65, "gap": -5, "highlight": false },
+      { "name": "Dr. Brown", "value": 78, "gap": 8, "highlight": false }
+    ],
+    "benchmark": 70,
+    "nccn_target": 70
+  },
+  "financial_impact": {
+    "annual_opportunity": "$173,600/year",
+    "math": "$173,600/year = 42 patients × $4,133 margin per patient"
+  },
+  "action_steps": [
+    {
+      "text": "Flag RAS WT mCRC patients eligible for EGFR therapy",
+      "icon": "flag"
+    },
+    {
+      "text": "Start provider alignment discussion with Dr. Miller",
+      "icon": "users"
+    },
+    {
+      "text": "Review RAS testing workflow with pathology",
+      "icon": "document"
+    },
+    {
+      "text": "Set monitoring alert for 2L EGFR adherence",
+      "icon": "alert"
+    }
+  ]
+} 

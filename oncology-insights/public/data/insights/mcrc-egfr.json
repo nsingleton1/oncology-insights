@@ -1,0 +1,52 @@
+{
+  "id": "mcrc-egfr-main",
+  "display_name": "mCRC RAS/BRAF WT (Main)",
+  "cohort": "mCRC patients on EGFR inhibitors as 1L therapy — focus on commercial payers over 60%",
+  "insight_type": "Revenue",
+  "summary": "Analysis of 1,156 mCRC patients treated with EGFR inhibitors in first line reveals significant variation in commercial payer mix. The average commercial payer rate of 65% exceeds the peer benchmark of 60%, representing a positive revenue impact of $2.1M annually. Notable variations in biomarker testing rates and treatment duration suggest opportunities for further optimization.",
+  "chart_data": [
+    { "name": "Provider A", "value": 68 },
+    { "name": "Provider B", "value": 65 },
+    { "name": "Provider C", "value": 72 },
+    { "name": "Provider D", "value": 63 },
+    { "name": "Provider E", "value": 67 }
+  ],
+  "benchmark": 60,
+  "table": [
+    {
+      "provider": "Provider A",
+      "utilization_rate": "68%",
+      "peer_avg": "65%",
+      "revenue_gap": "$75,000"
+    },
+    {
+      "provider": "Provider B",
+      "utilization_rate": "65%",
+      "peer_avg": "65%",
+      "revenue_gap": "$0"
+    },
+    {
+      "provider": "Provider C",
+      "utilization_rate": "72%",
+      "peer_avg": "65%",
+      "revenue_gap": "$175,000"
+    },
+    {
+      "provider": "Provider D",
+      "utilization_rate": "63%",
+      "peer_avg": "65%",
+      "revenue_gap": "-$50,000"
+    },
+    {
+      "provider": "Provider E",
+      "utilization_rate": "67%",
+      "peer_avg": "65%",
+      "revenue_gap": "$50,000"
+    }
+  ],
+  "suggestions": [
+    "Optimize commercial payer authorization workflow",
+    "Implement RAS testing quality improvement program",
+    "Develop EGFR inhibitor duration tracking dashboard"
+  ]
+} 

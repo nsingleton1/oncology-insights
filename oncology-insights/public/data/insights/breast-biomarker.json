@@ -1,0 +1,137 @@
+{
+  "id": "breast-biomarker",
+  "display_name": "Breast Cancer Biomarker Testing",
+  "cohort": "Breast Cancer, Biomarker Testing Compliance (2024–2025)",
+  "insight_type": "Precision Medicine Utilization",
+  "summary": "Breast cancer biomarker testing averages 83% compliance, with strong ER/PR/HER2 testing but opportunities in expanded panel testing for PIK3CA, BRCA1/2, and PDL1.",
+  "chart": {
+    "type": "bar",
+    "unit": "biomarker",
+    "data": [
+      { "name": "ER", "value": 98, "gap": 8, "highlight": false },
+      { "name": "PR", "value": 98, "gap": 8, "highlight": false },
+      { "name": "HER2", "value": 95, "gap": 5, "highlight": false },
+      { "name": "PIK3CA", "value": 72, "gap": -18, "highlight": true },
+      { "name": "BRCA1/2", "value": 68, "gap": -22, "highlight": true },
+      { "name": "PDL1", "value": 65, "gap": -25, "highlight": true }
+    ],
+    "benchmark": 90,
+    "nccn_target": 95
+  },
+  "financial_impact": {
+    "annual_opportunity": "$185,000/year",
+    "math": "$185,000/year = 21% avg testing gap (advanced markers) × 32 eligible patients × $27,500 precision therapy value"
+  },
+  "clinical_impact": {
+    "description": "Advanced breast cancer biomarker testing improves treatment selection and patient outcomes.",
+    "metrics": [
+      {
+        "type": "PFS",
+        "value": "+6.3 months",
+        "description": "Improved progression-free survival with matched therapies"
+      },
+      {
+        "type": "OS",
+        "value": "+7.8 months",
+        "description": "Overall survival benefit with biomarker-guided treatment"
+      },
+      {
+        "type": "ORR",
+        "value": "+28%",
+        "description": "Higher objective response rate with matched therapies"
+      },
+      {
+        "type": "QoL",
+        "value": "+22%",
+        "description": "Improved quality of life scores"
+      },
+      {
+        "type": "TTF",
+        "value": "-42%",
+        "description": "Reduced time to treatment failure"
+      }
+    ],
+    "quantitative": "+7.8 months OS"
+  },
+  "peer_comparison": {
+    "description": "Leading breast cancer programs achieve >90% comprehensive biomarker testing compliance including expanded molecular panels.",
+    "peer_benchmark": 90,
+    "financial_impact": {
+      "annual_opportunity": "$240,000/year",
+      "math": "$240,000/year = 24% gap to peer benchmark × 36 patients × $27,800 improved care value"
+    },
+    "action_steps": [
+      {
+        "text": "Implement expanded biomarker reflex panel for metastatic breast cancer",
+        "icon": "document"
+      },
+      {
+        "text": "Create PIK3CA testing protocol for HR+/HER2- patients",
+        "icon": "clipboard"
+      },
+      {
+        "text": "Develop automated BRCA1/2 testing algorithm",
+        "icon": "cog"
+      },
+      {
+        "text": "Establish breast-specific molecular tumor board",
+        "icon": "users"
+      }
+    ]
+  },
+  "weighted_score": 88,
+  "action_steps": [
+    {
+      "text": "Implement comprehensive NGS panel for all metastatic breast cancer",
+      "icon": "document"
+    },
+    {
+      "text": "Create provider education on PIK3CA and BRCA testing indications",
+      "icon": "users"
+    },
+    {
+      "text": "Develop PDL1 testing algorithm for triple-negative breast cancer",
+      "icon": "clipboard"
+    },
+    {
+      "text": "Establish biomarker testing KPI tracking by provider",
+      "icon": "chart"
+    }
+  ],
+  "suggestions": [
+    {
+      "text": "Consider germline testing pathway for hereditary risk",
+      "icon": "clipboard"
+    },
+    {
+      "text": "Evaluate HRD testing implementation pathway",
+      "icon": "search"
+    }
+  ],
+  "drilldowns": [
+    {
+      "label": "By Provider",
+      "cohort": "Breast Cancer Testing by Provider",
+      "jsonFile": "breast-biomarker-by-provider.json",
+      "drilldownLevel": 3
+    },
+    {
+      "label": "By Testing Method",
+      "cohort": "Breast Cancer Testing by Method",
+      "jsonFile": "breast-biomarker-by-method.json",
+      "drilldownLevel": 3
+    },
+    {
+      "label": "All Biomarkers",
+      "cohort": "Biomarker Testing by Cancer Type",
+      "jsonFile": "biomarker-compliance-by-cancer.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "Overall Compliance",
+      "cohort": "Biomarker Testing Compliance",
+      "jsonFile": "biomarker-compliance.json",
+      "drilldownLevel": 0
+    }
+  ]
+} 
