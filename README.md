@@ -1,6 +1,36 @@
-# OncoInsights Deployment Guide
+# OncoInsights Dashboard
 
-This document describes how to deploy the OncoInsights oncology analytics platform using Docker and Kubernetes.
+This is the main OncoInsights dashboard application for visualizing oncology insights data.
+
+## Project Structure
+
+- The main application code is in the root directory
+- Data files are located in `src/data/insights`
+- React components are in `src/components`
+
+## Deployment
+
+This application can be run locally using:
+
+```bash
+npm start
+```
+
+It can also be deployed using Docker:
+
+```bash
+docker-compose up
+```
+
+Or deployed to Railway:
+
+```bash
+railway up
+```
+
+## IMPORTANT NOTICE
+
+The `oncology-insights` subdirectory contains a deprecated version of this application and should not be used. All development should be done using the files in the root directory.
 
 ## Local Development
 

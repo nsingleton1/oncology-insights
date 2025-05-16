@@ -1,3 +1,11 @@
+# DEPRECATED VERSION - DO NOT USE
+
+This directory contains a deprecated version of the OncoInsights application.
+
+## IMPORTANT
+
+Please use the version in the root directory of this repository instead. This version is kept for historical reference only and should not be used for development or deployment.
+
 # Oncology Insights Platform
 
 A comprehensive analytics platform for oncology practices, featuring biomarker testing compliance metrics and treatment utilization insights.
