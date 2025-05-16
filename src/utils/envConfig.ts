@@ -24,14 +24,23 @@ const defaultConfig: EnvConfig = {
   version: '0.1.0',
 };
 
+// In production (Railway), we always use the API from the same server
+// In development, we use environment variables
+const dataSourceValue = process.env.NODE_ENV === 'production' 
+  ? 'api' 
+  : (process.env.REACT_APP_DATA_SOURCE as 'static' | 'api') || defaultConfig.dataSource;
+
 // Parse environment variables with defaults
 const config: EnvConfig = {
-  apiUrl: process.env.REACT_APP_API_URL || defaultConfig.apiUrl,
+  // In production, API is on the same server (no need for explicit URL)
+  apiUrl: process.env.NODE_ENV === 'production' 
+    ? '/api' 
+    : process.env.REACT_APP_API_URL || defaultConfig.apiUrl,
   environment: process.env.REACT_APP_ENVIRONMENT || defaultConfig.environment,
   isProduction: process.env.NODE_ENV === 'production',
   isDevelopment: process.env.NODE_ENV === 'development',
   appTitle: process.env.REACT_APP_TITLE || defaultConfig.appTitle,
-  dataSource: (process.env.REACT_APP_DATA_SOURCE as 'static' | 'api') || defaultConfig.dataSource,
+  dataSource: dataSourceValue,
   version: process.env.REACT_APP_VERSION || defaultConfig.version,
 };
 

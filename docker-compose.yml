@@ -1,5 +1,7 @@
+version: '3.8'
 services:
   oncoinsights:
+    container_name: oncoinsights
     build:
       context: .
       dockerfile: Dockerfile

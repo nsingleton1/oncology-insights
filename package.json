@@ -42,6 +42,8 @@
     "verify:data": "node scripts/verify-data-files.js",
     "deploy": "npm run build && node scripts/post-deployment.js",
     "deploy:windows": "npm run build && node scripts/windows-deploy.js && node scripts/post-deployment.js",
+    "mock-api": "json-server mock-api/db.json --port 3001",
+    "dev": "concurrently \"npm run start\" \"npm run mock-api\"",
     "git:init": "powershell -Command \"if (!(Test-Path .git)) { git init }\"",
     "git:add": "powershell -Command \"git add .\"",
     "git:commit": "powershell -Command \"git commit -m 'Initial commit with full deployment configuration'\"",
@@ -69,6 +71,8 @@
   "devDependencies": {
     "@types/uuid": "^10.0.0",
     "autoprefixer": "^10.4.17",
+    "concurrently": "9.1.2",
+    "json-server": "1.0.0-beta.3",
     "postcss": "^8.4.35"
   }
 }
