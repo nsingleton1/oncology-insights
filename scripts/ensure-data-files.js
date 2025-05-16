@@ -2,8 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { globSync } = require('glob');
 
-// Define paths
-const sourceDir = path.join(__dirname, '../src/data/insights');
+// Define path to insights data
 const publicDir = path.join(__dirname, '../public/data/insights');
 
 // Create destination directory if it doesn't exist
@@ -12,22 +11,15 @@ if (!fs.existsSync(publicDir)) {
   fs.mkdirSync(publicDir, { recursive: true });
 }
 
-// Create source directory if it doesn't exist
-if (!fs.existsSync(sourceDir)) {
-  console.log(`Creating source directory: ${sourceDir}`);
-  fs.mkdirSync(sourceDir, { recursive: true });
-}
+// Get all existing JSON files
+const existingFiles = globSync(path.join(publicDir, '*.json'));
 
-// Get all source JSON files
-const sourceFiles = globSync(path.join(sourceDir, '*.json'));
+console.log(`Found ${existingFiles.length} existing data files.`);
 
-console.log(`Found ${sourceFiles.length} data files in source directory.`);
-
-// Copy files to public directory
-sourceFiles.forEach(file => {
+// Validate and update existing files
+existingFiles.forEach(file => {
   try {
     const fileName = path.basename(file);
-    const targetPath = path.join(publicDir, fileName);
     
     // Read and validate the file
     const jsonContent = fs.readFileSync(file, 'utf8');
@@ -149,105 +141,97 @@ sourceFiles.forEach(file => {
       ];
     }
     
-    // Write the updated file to the public directory
-    fs.writeFileSync(targetPath, JSON.stringify(data, null, 2));
-    console.log(`✓ Copied and updated: ${fileName}`);
+    // Write the updated file back
+    fs.writeFileSync(file, JSON.stringify(data, null, 2));
+    console.log(`✓ Updated: ${fileName}`);
     
   } catch (error) {
     console.error(`❌ Error processing file ${path.basename(file)}: ${error.message}`);
   }
 });
 
-console.log(`\nCompleted processing data files. Copied to ${publicDir}`);
+console.log(`\nCompleted processing data files in ${publicDir}`);
 
-// If there are no source files, create a default one
-if (sourceFiles.length === 0) {
-  console.log(`Creating default clinical outcomes file as no source files were found.`);
+// Check for required files and create them if missing
+const requiredFiles = [
+  'breast-cancer-cdk46.json',
+  'nsclc-pd1.json',
+  'mcrc-egfr.json',
+  'biomarker-compliance.json'
+];
+
+const missingFiles = requiredFiles.filter(fileName => 
+  !fs.existsSync(path.join(publicDir, fileName))
+);
+
+if (missingFiles.length > 0) {
+  console.log(`Creating ${missingFiles.length} missing required file(s)...`);
   
-  const defaultData = {
-    id: "clinical-outcomes-overview",
-    display_name: "Clinical Outcomes",
-    cohort: "Patients with metastatic solid tumors initiating 1st Line treatment (2024-2025)",
-    insight_type: "Clinical Outcomes by Provider",
-    summary: "Overall survival rates show 5% variation across sites, with significant differences in progression-free survival by regimen and provider.",
-    chart: {
-      type: "bar",
-      unit: "provider",
-      data: [
-        { name: "Provider A", value: 60, gap: -5, highlight: true },
-        { name: "Provider B", value: 57, gap: -8, highlight: false },
-        { name: "Provider C", value: 54, gap: -11, highlight: false },
-        { name: "Provider D", value: 58, gap: -7, highlight: false },
-        { name: "Provider E", value: 56, gap: -9, highlight: false }
-      ],
-      benchmark: 65,
-      nccn_target: 70
-    },
-    financial_impact: {
-      annual_opportunity: "$0",
-      math: "Standardizing outcomes could lead to improved patient care without direct financial impact."
-    },
-    clinical_impact: {
-      description: "Reducing variation in clinical outcomes can significantly improve patient survival and quality of life.",
-      metrics: [
+  missingFiles.forEach(fileName => {
+    const id = fileName.replace('.json', '');
+    
+    const defaultData = {
+      id,
+      display_name: id.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '),
+      cohort: "Patients initiating treatment (2024-2025)",
+      insight_type: "Clinical Outcomes by Provider",
+      summary: `This is a default insight for ${id}. Please update with actual data.`,
+      chart: {
+        type: "bar",
+        unit: "provider",
+        data: [
+          { name: "Provider A", value: 60, gap: -5, highlight: true },
+          { name: "Provider B", value: 57, gap: -8, highlight: false },
+          { name: "Provider C", value: 54, gap: -11, highlight: false },
+          { name: "Provider D", value: 58, gap: -7, highlight: false },
+          { name: "Provider E", value: 56, gap: -9, highlight: false }
+        ],
+        benchmark: 65,
+        nccn_target: 70
+      },
+      financial_impact: {
+        annual_opportunity: "$75,000/year",
+        math: "Standardizing outcomes could lead to improved patient care."
+      },
+      clinical_impact: {
+        description: "Improving outcomes can significantly impact patient survival and quality of life.",
+        metrics: [
+          {
+            type: "PFS",
+            value: "+3.2 months",
+            description: "Potential median progression-free survival improvement"
+          },
+          {
+            type: "OS",
+            value: "+5.1 months",
+            description: "Potential median overall survival improvement"
+          },
+          {
+            type: "QoL",
+            value: "+15%",
+            description: "Enhanced quality of life measures"
+          }
+        ],
+        quantitative: "+5.1 months OS"
+      },
+      weighted_score: 78,
+      action_steps: [
         {
-          type: "PFS",
-          value: "+3.2 months",
-          description: "Potential median progression-free survival improvement"
+          text: "Compare outcomes by regimen and disease subtype",
+          icon: "chart-bar"
         },
         {
-          type: "OS",
-          value: "+5.1 months",
-          description: "Potential median overall survival improvement"
+          text: "Analyze progression-free survival by provider",
+          icon: "user-group"
         },
         {
-          type: "QoL",
-          value: "+15%",
-          description: "Enhanced quality of life measures"
+          text: "Identify best practices from top-performing providers",
+          icon: "star"
         }
-      ],
-      quantitative: "+5.1 months OS"
-    },
-    weighted_score: 78,
-    action_steps: [
-      {
-        text: "Compare outcomes by regimen and disease subtype",
-        icon: "chart-bar"
-      },
-      {
-        text: "Analyze progression-free survival by provider",
-        icon: "user-group"
-      },
-      {
-        text: "Identify best practices from top-performing providers",
-        icon: "star"
-      }
-    ],
-    drilldowns: [
-      {
-        label: "View by Payer Type",
-        cohort: "Clinical Outcomes by Payer Type",
-        jsonFile: "clinical-outcomes-by-payer.json",
-        drilldownLevel: 1
-      },
-      {
-        label: "Compare Sites",
-        cohort: "Clinical Outcomes by Site",
-        jsonFile: "clinical-outcomes-by-site.json",
-        drilldownLevel: 1
-      },
-      {
-        label: "Variance by Regimen",
-        cohort: "Clinical Outcomes by Regimen",
-        jsonFile: "clinical-outcomes-by-regimen.json",
-        drilldownLevel: 1
-      }
-    ]
-  };
-  
-  // Write to both source and public directories
-  fs.writeFileSync(path.join(sourceDir, 'clinical-outcomes.json'), JSON.stringify(defaultData, null, 2));
-  fs.writeFileSync(path.join(publicDir, 'clinical-outcomes.json'), JSON.stringify(defaultData, null, 2));
-  
-  console.log(`✓ Created default clinical outcomes file`);
+      ]
+    };
+    
+    fs.writeFileSync(path.join(publicDir, fileName), JSON.stringify(defaultData, null, 2));
+    console.log(`✓ Created default file: ${fileName}`);
+  });
 } 

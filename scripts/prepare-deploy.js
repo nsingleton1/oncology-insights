@@ -45,7 +45,7 @@ fs.writeFileSync(
 console.log('✅ Created static.json for Heroku');
 
 // Ensure data files are copied to the build directory
-const sourceDataDir = path.join(__dirname, '../src/data');
+const sourceDataDir = path.join(__dirname, '../public/data');
 const destDataDir = path.join(buildDir, 'data');
 
 // Create data directory in build if it doesn't exist
@@ -53,11 +53,11 @@ if (!fs.existsSync(destDataDir)) {
   fs.mkdirSync(destDataDir, { recursive: true });
 }
 
-// Copy any data from src/data to build/data (if src/data exists)
+// Copy data from public/data to build/data
 if (fs.existsSync(sourceDataDir)) {
   try {
     execSync(`cp -R ${sourceDataDir}/* ${destDataDir}/`, { stdio: 'inherit' });
-    console.log('✅ Copied data files from src/data to build/data');
+    console.log('✅ Copied data files from public/data to build/data');
   } catch (error) {
     console.warn('⚠️ Could not copy data files:', error.message);
     
