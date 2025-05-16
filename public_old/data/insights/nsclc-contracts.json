@@ -1,0 +1,130 @@
+{
+  "id": "nsclc-contracts-main",
+  "display_name": "NSCLC Contract Performance",
+  "cohort": "NSCLC Value-Based Contract Performance (2024–2025)",
+  "insight_type": "Contract Analysis",
+  "summary": "Your practice is underperforming on 3 of 5 key metrics in your NSCLC value-based contract, risking $420,000 in potential bonus payments.",
+  "chart": {
+    "type": "bar",
+    "unit": "metric",
+    "data": [
+      { "name": "Biomarker Testing", "value": 87, "gap": 7, "highlight": false },
+      { "name": "Treatment Concordance", "value": 68, "gap": -12, "highlight": true },
+      { "name": "ED Utilization", "value": 75, "gap": 5, "highlight": false },
+      { "name": "Hospice Referral", "value": 64, "gap": -16, "highlight": true },
+      { "name": "OS vs. Benchmark", "value": 72, "gap": -8, "highlight": true }
+    ],
+    "benchmark": 80,
+    "nccn_target": 80
+  },
+  "financial_impact": {
+    "annual_opportunity": "$420,000/year",
+    "math": "$420,000/year = 3 metrics × $140,000 per metric bonus payment"
+  },
+  "clinical_impact": {
+    "description": "Improving performance on contract metrics directly correlates with better patient outcomes.",
+    "metrics": [
+      {
+        "type": "OS",
+        "value": "+3.8 months",
+        "description": "Potential survival benefit from optimal treatment concordance"
+      },
+      {
+        "type": "QoL",
+        "value": "+24%",
+        "description": "Improved quality of life scores with proper palliative care"
+      },
+      {
+        "type": "Hosp",
+        "value": "-42%",
+        "description": "Reduced hospitalization rates with optimal supportive care"
+      },
+      {
+        "type": "ED",
+        "value": "-35%",
+        "description": "Reduced emergency department visits"
+      },
+      {
+        "type": "Cost",
+        "value": "-$12,750",
+        "description": "Lower total cost of care per patient"
+      }
+    ],
+    "quantitative": "-42% hospitalizations"
+  },
+  "peer_comparison": {
+    "description": "Top-performing practices achieve 85%+ compliance across all NSCLC value-based contract metrics, securing full bonus payments of $720,000/year.",
+    "peer_benchmark": 85,
+    "financial_impact": {
+      "annual_opportunity": "$650,000/year",
+      "math": "$650,000/year = missed bonus ($420,000) + additional shared savings ($230,000)"
+    },
+    "action_steps": [
+      {
+        "text": "Schedule multidisciplinary team review of contract performance",
+        "icon": "users"
+      },
+      {
+        "text": "Implement automated guideline compliance alerts",
+        "icon": "alert"
+      },
+      {
+        "text": "Develop comprehensive contract performance dashboard",
+        "icon": "chart"
+      },
+      {
+        "text": "Create metric-specific intervention workflows",
+        "icon": "clipboard"
+      }
+    ]
+  },
+  "weighted_score": 96,
+  "action_steps": [
+    {
+      "text": "Implement NCCN guideline verification at treatment initiation",
+      "icon": "document"
+    },
+    {
+      "text": "Establish early palliative care integration protocol",
+      "icon": "users"
+    },
+    {
+      "text": "Create biomarker testing completion tracking system",
+      "icon": "flag"
+    },
+    {
+      "text": "Develop symptom management pathways to reduce ED utilization",
+      "icon": "clipboard"
+    }
+  ],
+  "suggestions": [
+    {
+      "text": "Negotiate tiered bonus structure for partial metric achievement",
+      "icon": "document"
+    },
+    {
+      "text": "Implement monthly review of non-concordant treatment cases",
+      "icon": "chart"
+    }
+  ],
+  "drilldowns": [
+    {
+      "label": "Performance by Provider",
+      "cohort": "NSCLC Contract Metrics by Provider",
+      "jsonFile": "nsclc-contracts-by-provider.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "Metric Trends",
+      "cohort": "NSCLC Contract Metrics Historical Trends",
+      "jsonFile": "nsclc-contracts-trends.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "Payer Comparison",
+      "cohort": "NSCLC Contract Performance by Payer",
+      "jsonFile": "nsclc-contracts-by-payer.json",
+      "drilldownLevel": 1
+    }
+  ]
+} 

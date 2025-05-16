@@ -1,0 +1,137 @@
+{
+  "id": "biomarker-compliance-by-method",
+  "display_name": "Biomarker Testing by Method",
+  "cohort": "Biomarker Testing, by Method (2024–2025)",
+  "insight_type": "Precision Medicine Utilization",
+  "summary": "NGS panel testing utilized in only 38% of eligible cases, far below the 65% benchmark. Increasing NGS utilization represents a $245,000 annual opportunity in improved therapy matching.",
+  "chart": {
+    "type": "bar",
+    "unit": "method",
+    "data": [
+      { "name": "IHC", "value": 92, "gap": 2, "highlight": false },
+      { "name": "FISH", "value": 85, "gap": -5, "highlight": false },
+      { "name": "PCR", "value": 78, "gap": -12, "highlight": false },
+      { "name": "Liquid Biopsy", "value": 42, "gap": -18, "highlight": true },
+      { "name": "NGS Panel", "value": 38, "gap": -27, "highlight": true },
+      { "name": "RNA-seq", "value": 22, "gap": -43, "highlight": true }
+    ],
+    "benchmark": 65,
+    "nccn_target": 80
+  },
+  "financial_impact": {
+    "annual_opportunity": "$245,000/year",
+    "math": "$245,000/year = 27% testing gap (NGS) × 65 patients × $14,000 improved therapy matching"
+  },
+  "clinical_impact": {
+    "description": "Comprehensive NGS panel testing improves therapy matching and patient outcomes.",
+    "metrics": [
+      {
+        "type": "TM",
+        "value": "+54%",
+        "description": "Improved therapy matching rate with NGS vs. single-gene testing"
+      },
+      {
+        "type": "OS",
+        "value": "+6.7 months",
+        "description": "Overall survival benefit with NGS-guided therapy selection"
+      },
+      {
+        "type": "CT",
+        "value": "+42%",
+        "description": "Increased clinical trial eligibility identification"
+      },
+      {
+        "type": "TT",
+        "value": "-35%",
+        "description": "Reduced need for repeat testing"
+      },
+      {
+        "type": "Hosp",
+        "value": "-28%",
+        "description": "Reduced hospitalization rates"
+      }
+    ],
+    "quantitative": "+54% therapy matching"
+  },
+  "peer_comparison": {
+    "description": "Leading oncology practices utilize NGS panel testing in 75% of eligible cases compared to your 38%, resulting in better outcomes.",
+    "peer_benchmark": 75,
+    "financial_impact": {
+      "annual_opportunity": "$335,000/year",
+      "math": "$335,000/year = 37% gap to peer benchmark × 65 patients × $14,000 improved care value"
+    },
+    "action_steps": [
+      {
+        "text": "Develop NGS panel ordering pathway in EMR",
+        "icon": "document"
+      },
+      {
+        "text": "Create decision support tool for molecular testing",
+        "icon": "lightbulb"
+      },
+      {
+        "text": "Implement automatic trigger for NGS at diagnosis for advanced disease",
+        "icon": "cog"
+      },
+      {
+        "text": "Establish molecular tumor board program",
+        "icon": "users"
+      }
+    ]
+  },
+  "weighted_score": 91,
+  "action_steps": [
+    {
+      "text": "Develop NGS-first protocol for advanced solid tumors",
+      "icon": "document"
+    },
+    {
+      "text": "Implement liquid biopsy program for tissue-limited cases",
+      "icon": "flask"
+    },
+    {
+      "text": "Create provider education program on comprehensive testing",
+      "icon": "users"
+    },
+    {
+      "text": "Establish NGS test utilization tracking dashboard",
+      "icon": "chart"
+    }
+  ],
+  "suggestions": [
+    {
+      "text": "Evaluate use of rapid RNA-seq for quick therapy matching",
+      "icon": "clock"
+    },
+    {
+      "text": "Consider in-house NGS capability vs. send-out testing",
+      "icon": "building"
+    }
+  ],
+  "drilldowns": [
+    {
+      "label": "By Cancer Type",
+      "cohort": "Biomarker Testing by Cancer Type",
+      "jsonFile": "biomarker-compliance-by-cancer.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "By Provider",
+      "cohort": "Biomarker Testing by Provider",
+      "jsonFile": "biomarker-compliance-by-provider.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "Turnaround Time",
+      "cohort": "Biomarker Testing Turnaround Time",
+      "jsonFile": "biomarker-compliance-tat.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "Overall Compliance",
+      "cohort": "Biomarker Testing Compliance",
+      "jsonFile": "biomarker-compliance.json",
+      "drilldownLevel": 0
+    }
+  ]
+} 

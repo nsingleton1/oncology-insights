@@ -1,0 +1,43 @@
+{
+  "id": "breast-cancer-cdk46-main",
+  "display_name": "ER+/HER2- MBC (Main)",
+  "cohort": "ER+/HER2- Metastatic Breast Cancer, All Patients, Q1 2023",
+  "insight_type": "Treatment Patterns by Regimen",
+  "summary": "Standard of care abemaciclib CDK4/6 utilization is at 80% for eligible patients, aligning with NCCN guidelines.",
+  "recommendation": "Continue to maintain high standard of care utilization, particularly focusing on maintaining guideline adherence.",
+  "financial_impact": 0,
+  "financial_impact_description": "Current practice is aligned with best practices.",
+  "peer_financial_impact": 0,
+  "peer_financial_impact_description": "Your organization is performing well compared to peers.",
+  "action_steps": [
+    "Continue to monitor CDK4/6 inhibitor utilization",
+    "No immediate action required"
+  ],
+  "peer_action_steps": [
+    "Continue current practices",
+    "Consider sharing best practices with underperforming organizations"
+  ],
+  "chart_data": {
+    "categories": ["Abemaciclib", "Palbociclib", "Ribociclib", "Everolimus", "Other"],
+    "values": [80, 10, 5, 3, 2],
+    "peer_values": [65, 20, 8, 5, 2],
+    "target_values": [85, 10, 5, 0, 0]
+  },
+  "drilldowns": [
+    {
+      "label": "View by Site",
+      "description": "Compare regimen utilization by site",
+      "jsonFile": "breast-cancer-cdk46-by-site.json"
+    },
+    {
+      "label": "View by Payer",
+      "description": "Compare regimen utilization by payer type",
+      "jsonFile": "breast-cancer-cdk46-by-payer.json"
+    },
+    {
+      "label": "View by Regimen",
+      "description": "Compare regimen utilization in detail",
+      "jsonFile": "breast-cancer-cdk46-by-regimen.json"
+    }
+  ]
+} 

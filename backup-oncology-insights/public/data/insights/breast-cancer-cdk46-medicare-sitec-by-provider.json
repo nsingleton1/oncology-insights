@@ -1,0 +1,38 @@
+{
+  "cohort": "ER+/HER2- MBC, 2L, Medicare, Site C, by Provider (2024–2025)",
+  "insight_type": "Provider Medicare Variation",
+  "summary": "Dr. Rodriguez has a 12% CDK4/6i utilization rate for Medicare patients, 10% below Site C average. Targeted intervention could yield $38,000/year.",
+  "chart": {
+    "type": "bar",
+    "unit": "provider",
+    "data": [
+      { "name": "Dr. Rodriguez", "value": 12, "gap": -10, "highlight": true },
+      { "name": "Dr. Patel", "value": 24, "gap": 2, "highlight": false },
+      { "name": "Dr. Chen", "value": 30, "gap": 8, "highlight": false }
+    ],
+    "benchmark": 22,
+    "nccn_target": 22
+  },
+  "financial_impact": {
+    "annual_opportunity": "$38,000/year",
+    "math": "$38,000/year = 10 Medicare patients × $3,800 margin per patient"
+  },
+  "clinical_impact": {
+    "description": "Improving Dr. Rodriguez's Medicare utilization increases survival.",
+    "quantitative": "+6.8 months PFS"
+  },
+  "peer_comparison": {
+    "description": "Site C Medicare average is 22%.",
+    "peer_benchmark": 22
+  },
+  "weighted_score": 79,
+  "action_steps": [
+    "Schedule 1:1 meeting with Dr. Rodriguez",
+    "Provide Medicare-specific CDK4/6i resources",
+    "Assign financial navigator to Dr. Rodriguez's Medicare patients"
+  ],
+  "suggestions": [
+    "Share best practices from Dr. Chen with Dr. Rodriguez"
+  ],
+  "drilldowns": []
+} 

@@ -1,0 +1,129 @@
+{
+  "id": "crc-screening-methods",
+  "display_name": "CRC Screening by Method",
+  "cohort": "Colorectal Cancer Screening Method Distribution (2024–2025)",
+  "insight_type": "Screening Method Analysis",
+  "summary": "Your practice has 82% colonoscopy utilization vs. only 18% for non-invasive methods (FIT/Cologuard). Peer practices achieve 35% non-invasive test usage, resulting in higher overall screening rates.",
+  "chart": {
+    "type": "bar",
+    "unit": "method",
+    "data": [
+      { "name": "Colonoscopy", "value": 82, "gap": 47, "highlight": true },
+      { "name": "FIT", "value": 12, "gap": -23, "highlight": true },
+      { "name": "Cologuard", "value": 6, "gap": -29, "highlight": true },
+      { "name": "Flex Sigmoidoscopy", "value": 0, "gap": -35, "highlight": false }
+    ],
+    "benchmark": 35,
+    "nccn_target": 35
+  },
+  "financial_impact": {
+    "annual_opportunity": "$132,000/year",
+    "math": "$132,000/year = $82,000 in quality bonus payments + $50,000 in detection margin"
+  },
+  "clinical_impact": {
+    "description": "Diversifying screening methods can increase overall screening rates and improve outcomes.",
+    "metrics": [
+      {
+        "type": "Screen",
+        "value": "+14%",
+        "description": "Potential improvement in overall screening rates"
+      },
+      {
+        "type": "Adhere",
+        "value": "+22%",
+        "description": "Better adherence to regular screening intervals"
+      },
+      {
+        "type": "Accept",
+        "value": "+28%",
+        "description": "Increased screening acceptance among reluctant patients"
+      },
+      {
+        "type": "Equity",
+        "value": "+31%",
+        "description": "Improved screening equity across populations"
+      },
+      {
+        "type": "Detect",
+        "value": "+6",
+        "description": "Additional early stage CRC cases detected annually"
+      }
+    ],
+    "quantitative": "+14% screening rates"
+  },
+  "peer_comparison": {
+    "description": "Top-performing practices achieve 35% non-invasive screening method utilization vs. your 18%, resulting in 12% higher overall screening rates.",
+    "peer_benchmark": 35,
+    "financial_impact": {
+      "annual_opportunity": "$180,000/year",
+      "math": "$180,000/year = $105,000 in quality bonus payments + $75,000 in early detection margin"
+    },
+    "action_steps": [
+      {
+        "text": "Implement FIT test distribution program in primary care",
+        "icon": "users"
+      },
+      {
+        "text": "Develop patient education on screening method options",
+        "icon": "document"
+      },
+      {
+        "text": "Create EHR alert for non-invasive screening options",
+        "icon": "alert"
+      },
+      {
+        "text": "Establish FIT test tracking and follow-up workflow",
+        "icon": "clipboard"
+      }
+    ]
+  },
+  "weighted_score": 88,
+  "action_steps": [
+    {
+      "text": "Train providers on non-invasive screening recommendations",
+      "icon": "users"
+    },
+    {
+      "text": "Implement nurse-led FIT/Cologuard distribution protocol",
+      "icon": "document"
+    },
+    {
+      "text": "Create patient-facing materials on screening options",
+      "icon": "document"
+    },
+    {
+      "text": "Develop tracking system for non-invasive test completion",
+      "icon": "clipboard"
+    }
+  ],
+  "suggestions": [
+    {
+      "text": "Consider mailed FIT program for overdue patients",
+      "icon": "document"
+    },
+    {
+      "text": "Analyze colonoscopy capacity constraints",
+      "icon": "chart-line"
+    }
+  ],
+  "drilldowns": [
+    {
+      "label": "View by Demographics",
+      "cohort": "Colorectal Cancer Screening by Demographics",
+      "jsonFile": "crc-screening-demographics.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "View by Payer",
+      "cohort": "Colorectal Cancer Screening by Insurance",
+      "jsonFile": "crc-screening-insurance.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "View Overview",
+      "cohort": "Colorectal Cancer Screening Gaps",
+      "jsonFile": "crc-screening-gaps.json",
+      "drilldownLevel": 0
+    }
+  ]
+} 

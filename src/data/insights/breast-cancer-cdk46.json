@@ -1,43 +1,120 @@
 {
   "id": "breast-cancer-cdk46-main",
   "display_name": "ER+/HER2- MBC (Main)",
-  "cohort": "ER+/HER2- Metastatic Breast Cancer, All Patients, Q1 2023",
-  "insight_type": "Treatment Patterns by Regimen",
-  "summary": "Standard of care abemaciclib CDK4/6 utilization is at 80% for eligible patients, aligning with NCCN guidelines.",
-  "recommendation": "Continue to maintain high standard of care utilization, particularly focusing on maintaining guideline adherence.",
-  "financial_impact": 0,
-  "financial_impact_description": "Current practice is aligned with best practices.",
-  "peer_financial_impact": 0,
-  "peer_financial_impact_description": "Your organization is performing well compared to peers.",
-  "action_steps": [
-    "Continue to monitor CDK4/6 inhibitor utilization",
-    "No immediate action required"
-  ],
-  "peer_action_steps": [
-    "Continue current practices",
-    "Consider sharing best practices with underperforming organizations"
-  ],
-  "chart_data": {
-    "categories": ["Abemaciclib", "Palbociclib", "Ribociclib", "Everolimus", "Other"],
-    "values": [80, 10, 5, 3, 2],
-    "peer_values": [65, 20, 8, 5, 2],
-    "target_values": [85, 10, 5, 0, 0]
+  "cohort": "ER+/HER2- Metastatic Breast Cancer, 2nd Line (2024–2025)",
+  "insight_type": "Utilization Gap",
+  "summary": "Dr. Smith prescribes CDK4/6i to 42% of eligible patients, 23% below NCCN guidance. Closing this gap could yield $87,500/year.",
+  "chart": {
+    "type": "bar",
+    "unit": "provider",
+    "data": [
+      { "name": "Dr. Smith", "value": 42, "gap": -23, "highlight": true },
+      { "name": "Dr. Patel", "value": 63, "gap": -2, "highlight": false },
+      { "name": "Dr. Lee", "value": 68, "gap": 3, "highlight": false },
+      { "name": "Dr. Wang", "value": 73, "gap": 8, "highlight": false }
+    ],
+    "benchmark": 65,
+    "nccn_target": 65
   },
+  "financial_impact": {
+    "annual_opportunity": "$87,500/year",
+    "math": "$87,500/year = 23 patients × $3,800 margin per patient"
+  },
+  "clinical_impact": {
+    "description": "CDK4/6 inhibitors improve survival outcomes and quality of life in ER+/HER2- MBC patients.",
+    "metrics": [
+      {
+        "type": "PFS",
+        "value": "+10.2 months",
+        "description": "Median progression-free survival benefit"
+      },
+      {
+        "type": "OS",
+        "value": "+8.3 months",
+        "description": "Median overall survival benefit"
+      },
+      {
+        "type": "ORR",
+        "value": "+18%",
+        "description": "Improved objective response rate"
+      },
+      {
+        "type": "QoL",
+        "value": "+22%",
+        "description": "Enhanced quality of life measures"
+      },
+      {
+        "type": "Hosp",
+        "value": "-35%",
+        "description": "Reduced hospitalization rate"
+      }
+    ],
+    "quantitative": "+10.2 months PFS"
+  },
+  "peer_comparison": {
+    "description": "Dr. Smith prescribes CDK4/6i to 42% of eligible patients, 40% below peer average. Closing this gap could yield $152,000/year.",
+    "peer_benchmark": 82,
+    "financial_impact": {
+      "annual_opportunity": "$152,000/year",
+      "math": "$152,000/year = 40 patients × $3,800 margin per patient"
+    },
+    "action_steps": [
+      {
+        "text": "Schedule peer-to-peer learning between Dr. Smith and Dr. Wang",
+        "icon": "users"
+      },
+      {
+        "text": "Share top-performer best practices with Dr. Smith",
+        "icon": "document"
+      },
+      {
+        "text": "Implement peer benchmark monitoring dashboard",
+        "icon": "chart"
+      },
+      {
+        "text": "Create provider-specific feedback loops",
+        "icon": "clipboard"
+      }
+    ]
+  },
+  "weighted_score": 92,
+  "action_steps": [
+    {
+      "text": "Flag patients eligible for CDK4/6i but untreated",
+      "icon": "flag"
+    },
+    {
+      "text": "Start provider alignment discussion with Dr. Smith",
+      "icon": "users"
+    },
+    {
+      "text": "Share NCCN/CDK4/6i one-pager with practice team",
+      "icon": "document"
+    },
+    {
+      "text": "Set monitoring alert for 2L CDK4/6i adherence",
+      "icon": "alert"
+    }
+  ],
+  "suggestions": [],
   "drilldowns": [
     {
-      "label": "View by Site",
-      "description": "Compare regimen utilization by site",
-      "jsonFile": "breast-cancer-cdk46-by-site.json"
+      "label": "View by Payer Type",
+      "cohort": "ER+/HER2- MBC, 2L, by Payer Type",
+      "jsonFile": "breast-cancer-cdk46-by-payer.json",
+      "drilldownLevel": 1
     },
     {
-      "label": "View by Payer",
-      "description": "Compare regimen utilization by payer type",
-      "jsonFile": "breast-cancer-cdk46-by-payer.json"
+      "label": "Compare Sites",
+      "cohort": "ER+/HER2- MBC, 2L, by Site",
+      "jsonFile": "breast-cancer-cdk46-by-site.json",
+      "drilldownLevel": 1
     },
     {
-      "label": "View by Regimen",
-      "description": "Compare regimen utilization in detail",
-      "jsonFile": "breast-cancer-cdk46-by-regimen.json"
+      "label": "Variance by Regimen",
+      "cohort": "ER+/HER2- MBC, 2L, by Regimen",
+      "jsonFile": "breast-cancer-cdk46-by-regimen.json",
+      "drilldownLevel": 1
     }
   ]
 } 

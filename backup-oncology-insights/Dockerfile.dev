@@ -1,0 +1,26 @@
+# Development Dockerfile for oncology-insights platform
+FROM node:18-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Install dependencies only when needed
+COPY package.json package-lock.json* ./
+RUN npm install
+
+# Add wait script to wait for services
+ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.9.0/wait /wait
+RUN chmod +x /wait
+
+# Copy the rest of the application
+COPY . .
+
+# Create necessary directories
+RUN mkdir -p public/data
+RUN mkdir -p src/data/insights
+
+# Expose port for hot reload
+EXPOSE 3000
+
+# Start the app - using wait ensures any other services are ready
+CMD /wait && npm start 

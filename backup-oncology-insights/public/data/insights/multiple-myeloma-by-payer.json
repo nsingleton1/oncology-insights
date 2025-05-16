@@ -1,0 +1,131 @@
+{
+  "id": "multiple-myeloma-by-payer",
+  "display_name": "Multiple Myeloma by Payer",
+  "cohort": "Multiple Myeloma, RRMM, by Payer Regimen Coverage (2024–2025)",
+  "insight_type": "Payer Coverage Analysis",
+  "summary": "Significant variation in use of high-margin regimens based on payer. Medicare patients receive Dara-based regimens 52% of the time vs. only 18% for Commercial Payer B.",
+  "chart": {
+    "type": "bar",
+    "unit": "payer",
+    "data": [
+      { "name": "Medicare", "value": 52, "gap": 18, "highlight": false },
+      { "name": "Commercial A", "value": 41, "gap": 7, "highlight": false },
+      { "name": "Medicaid", "value": 29, "gap": -5, "highlight": false },
+      { "name": "Commercial B", "value": 18, "gap": -16, "highlight": true },
+      { "name": "Commercial C", "value": 22, "gap": -12, "highlight": true },
+      { "name": "Self-Pay", "value": 15, "gap": -19, "highlight": true }
+    ],
+    "benchmark": 34,
+    "nccn_target": 40
+  },
+  "financial_impact": {
+    "annual_opportunity": "$325,000/year",
+    "math": "$325,000/year = 15% utilization gap × 35 patients × $62,000 adjusted margin difference"
+  },
+  "clinical_impact": {
+    "description": "Addressing payer-specific barriers could improve access to optimal regimens for all patients.",
+    "metrics": [
+      {
+        "type": "PFS",
+        "value": "+18.4 months",
+        "description": "Potential PFS improvement with optimized regimen selection"
+      },
+      {
+        "type": "Equity",
+        "value": "+62%",
+        "description": "Improvement in treatment equity across payer types"
+      },
+      {
+        "type": "Auth",
+        "value": "-72%",
+        "description": "Reduction in authorization denials with proactive approach"
+      },
+      {
+        "type": "OOP",
+        "value": "-45%",
+        "description": "Reduction in patient out-of-pocket costs with financial counseling"
+      },
+      {
+        "type": "TTT",
+        "value": "-9.4 days",
+        "description": "Reduced time to treatment initiation"
+      }
+    ],
+    "quantitative": "+18.4 months PFS"
+  },
+  "peer_comparison": {
+    "description": "Top RRMM practices achieve 38%+ Dara-based regimen utilization for Commercial B patients vs. your 18%. Successful practices employ dedicated prior authorization specialists.",
+    "peer_benchmark": 38,
+    "financial_impact": {
+      "annual_opportunity": "$415,000/year",
+      "math": "$415,000/year = 20% increase × 35 patients × $59,000 margin difference"
+    },
+    "action_steps": [
+      {
+        "text": "Create payer-specific prior authorization protocols",
+        "icon": "document"
+      },
+      {
+        "text": "Implement financial navigation program for self-pay patients",
+        "icon": "users"
+      },
+      {
+        "text": "Develop payer contract negotiation strategy",
+        "icon": "chart"
+      },
+      {
+        "text": "Establish dedicated prior authorization team",
+        "icon": "clipboard"
+      }
+    ]
+  },
+  "weighted_score": 92,
+  "action_steps": [
+    {
+      "text": "Analyze Commercial B and C authorization requirements",
+      "icon": "chart-line"
+    },
+    {
+      "text": "Implement patient assistance program enrollment process",
+      "icon": "users"
+    },
+    {
+      "text": "Develop payer-specific authorization documentation templates",
+      "icon": "document"
+    },
+    {
+      "text": "Create appeals process for regimen denials",
+      "icon": "clipboard"
+    }
+  ],
+  "suggestions": [
+    {
+      "text": "Negotiate improved regimen coverage with Commercial B and C",
+      "icon": "document"
+    },
+    {
+      "text": "Share successful authorization strategies across team",
+      "icon": "users"
+    }
+  ],
+  "drilldowns": [
+    {
+      "label": "View by Provider",
+      "cohort": "Multiple Myeloma Regimen Selection by Provider",
+      "jsonFile": "multiple-myeloma-by-provider.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "Compare Sites",
+      "cohort": "Multiple Myeloma Regimen Selection by Site",
+      "jsonFile": "multiple-myeloma-by-site.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "Analyze Margins",
+      "cohort": "Multiple Myeloma Regimen Margin Analysis",
+      "jsonFile": "multiple-myeloma-regimen-margins.json",
+      "drilldownLevel": 1
+    }
+  ]
+} 

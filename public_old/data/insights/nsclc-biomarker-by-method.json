@@ -1,0 +1,137 @@
+{
+  "id": "nsclc-biomarker-by-method",
+  "display_name": "NSCLC Biomarker Testing by Method",
+  "cohort": "NSCLC Biomarker Testing, by Method (2024–2025)",
+  "insight_type": "Precision Medicine Utilization",
+  "summary": "NSCLC testing method adoption varies widely: IHC and FISH >90%, while comprehensive NGS panel testing (52%) lags below target. Increasing NGS utilization represents a $215,000 opportunity.",
+  "chart": {
+    "type": "bar",
+    "unit": "method",
+    "data": [
+      { "name": "IHC", "value": 95, "gap": 5, "highlight": false },
+      { "name": "FISH", "value": 92, "gap": 2, "highlight": false },
+      { "name": "PCR", "value": 85, "gap": -5, "highlight": false },
+      { "name": "Liquid Biopsy", "value": 63, "gap": -27, "highlight": true },
+      { "name": "NGS Panel", "value": 52, "gap": -38, "highlight": true },
+      { "name": "RNA-seq", "value": 35, "gap": -55, "highlight": true }
+    ],
+    "benchmark": 90,
+    "nccn_target": 95
+  },
+  "financial_impact": {
+    "annual_opportunity": "$215,000/year",
+    "math": "$215,000/year = 38% testing gap (NGS) × 30 NSCLC patients × $18,800 improved therapy matching"
+  },
+  "clinical_impact": {
+    "description": "Comprehensive NGS panel testing significantly improves NSCLC therapy matching and outcomes.",
+    "metrics": [
+      {
+        "type": "PFS",
+        "value": "+8.6 months",
+        "description": "Improved progression-free survival with NGS-guided therapy"
+      },
+      {
+        "type": "OS",
+        "value": "+11.8 months",
+        "description": "Overall survival benefit with comprehensive testing"
+      },
+      {
+        "type": "ORR",
+        "value": "+47%",
+        "description": "Higher objective response rate with matched therapies"
+      },
+      {
+        "type": "CT",
+        "value": "+58%",
+        "description": "Increased clinical trial eligibility identification"
+      },
+      {
+        "type": "TT",
+        "value": "-65%",
+        "description": "Reduced need for repeat testing"
+      }
+    ],
+    "quantitative": "+11.8 months OS"
+  },
+  "peer_comparison": {
+    "description": "Leading lung cancer programs utilize NGS panel testing in >85% of cases, vs. your 52%, identifying more actionable alterations.",
+    "peer_benchmark": 85,
+    "financial_impact": {
+      "annual_opportunity": "$295,000/year",
+      "math": "$295,000/year = 33% gap to peer benchmark × 45 patients × $19,800 improved care value"
+    },
+    "action_steps": [
+      {
+        "text": "Implement NGS-first reflex testing protocol for all advanced NSCLC",
+        "icon": "document"
+      },
+      {
+        "text": "Create liquid biopsy pathway for tissue-limited cases",
+        "icon": "flask"
+      },
+      {
+        "text": "Develop RNA-seq implementation strategy for fusion detection",
+        "icon": "cog"
+      },
+      {
+        "text": "Establish molecular tumor board for complex cases",
+        "icon": "users"
+      }
+    ]
+  },
+  "weighted_score": 96,
+  "action_steps": [
+    {
+      "text": "Implement universal NGS reflex testing for advanced NSCLC",
+      "icon": "document"
+    },
+    {
+      "text": "Create NSCLC-specific tissue collection protocol",
+      "icon": "clipboard"
+    },
+    {
+      "text": "Develop liquid biopsy program for insufficient tissue",
+      "icon": "flask"
+    },
+    {
+      "text": "Establish testing method tracking dashboard",
+      "icon": "chart"
+    }
+  ],
+  "suggestions": [
+    {
+      "text": "Evaluate tissue acquisition/adequacy challenges",
+      "icon": "search"
+    },
+    {
+      "text": "Consider dedicated molecular coordinator role",
+      "icon": "user"
+    }
+  ],
+  "drilldowns": [
+    {
+      "label": "By Provider",
+      "cohort": "NSCLC Testing by Provider",
+      "jsonFile": "nsclc-biomarker-by-provider.json",
+      "drilldownLevel": 3
+    },
+    {
+      "label": "All NSCLC Biomarkers",
+      "cohort": "NSCLC Biomarker Testing",
+      "jsonFile": "nsclc-biomarker.json",
+      "drilldownLevel": 2
+    },
+    {
+      "label": "All Methods",
+      "cohort": "Biomarker Testing by Method",
+      "jsonFile": "biomarker-compliance-by-method.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "Overall Compliance",
+      "cohort": "Biomarker Testing Compliance",
+      "jsonFile": "biomarker-compliance.json",
+      "drilldownLevel": 0
+    }
+  ]
+} 

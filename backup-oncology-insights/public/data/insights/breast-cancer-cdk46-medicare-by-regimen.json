@@ -1,0 +1,45 @@
+{
+  "cohort": "ER+/HER2- MBC, 2L, Medicare, by Regimen (2024–2025)",
+  "insight_type": "Medicare Regimen Variation",
+  "summary": "Abemaciclib is underutilized at 24% in Medicare patients, 14% below peer average. Closing this gap could yield $52,000/year.",
+  "chart": {
+    "type": "bar",
+    "unit": "regimen",
+    "data": [
+      { "name": "Palbociclib", "value": 44, "gap": 6, "highlight": false },
+      { "name": "Abemaciclib", "value": 24, "gap": -14, "highlight": true },
+      { "name": "Ribociclib", "value": 46, "gap": 8, "highlight": false }
+    ],
+    "benchmark": 38,
+    "nccn_target": 38
+  },
+  "financial_impact": {
+    "annual_opportunity": "$52,000/year",
+    "math": "$52,000/year = 14 Medicare patients × $3,700 margin per patient"
+  },
+  "clinical_impact": {
+    "description": "Improving abemaciclib utilization in Medicare patients increases GI symptom-free survival.",
+    "quantitative": "+6.5 months PFS"
+  },
+  "peer_comparison": {
+    "description": "Medicare peer average across regimens is 38%.",
+    "peer_benchmark": 38
+  },
+  "weighted_score": 76,
+  "action_steps": [
+    "Review Medicare formulary for abemaciclib",
+    "Educate providers on managing abemaciclib side effects in Medicare patients",
+    "Implement patient assistance programs for abemaciclib"
+  ],
+  "suggestions": [
+    "Negotiate with payers for improved abemaciclib coverage"
+  ],
+  "drilldowns": [
+    {
+      "label": "By Age Group",
+      "cohort": "ER+/HER2- MBC, 2L, Medicare, Abemaciclib, by Age",
+      "jsonFile": "breast-cancer-cdk46-medicare-abemaciclib-by-age.json",
+      "drilldownLevel": 3
+    }
+  ]
+} 

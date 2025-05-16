@@ -1,0 +1,130 @@
+{
+  "id": "crc-screening-gaps-main",
+  "display_name": "Colorectal Cancer Screening Gaps",
+  "cohort": "Eligible Patients for Colorectal Cancer Screening (2024–2025)",
+  "insight_type": "Care Gap Analysis",
+  "summary": "32% of eligible patients have not completed colorectal cancer screening, exceeding the HEDIS benchmark by 12%. Closing this gap could prevent 7 late-stage diagnoses annually.",
+  "chart": {
+    "type": "bar",
+    "unit": "provider",
+    "data": [
+      { "name": "Dr. Johnson", "value": 84, "gap": 14, "highlight": false },
+      { "name": "Dr. Williams", "value": 78, "gap": 8, "highlight": false },
+      { "name": "Dr. Chen", "value": 68, "gap": -2, "highlight": false },
+      { "name": "Dr. Patel", "value": 60, "gap": -10, "highlight": true },
+      { "name": "Dr. Rodriguez", "value": 56, "gap": -14, "highlight": true }
+    ],
+    "benchmark": 70,
+    "nccn_target": 80
+  },
+  "financial_impact": {
+    "annual_opportunity": "$145,000/year",
+    "math": "$145,000/year = $75,000 in quality bonus payments + $70,000 in early detection treatment margin"
+  },
+  "clinical_impact": {
+    "description": "Improved colorectal cancer screening rates directly impact early detection and patient outcomes.",
+    "metrics": [
+      {
+        "type": "5-yr",
+        "value": "+47%",
+        "description": "Increased 5-year survival rate with early detection"
+      },
+      {
+        "type": "Stage",
+        "value": "-65%",
+        "description": "Reduction in late-stage diagnoses"
+      },
+      {
+        "type": "Mort",
+        "value": "-53%",
+        "description": "Reduction in CRC-specific mortality"
+      },
+      {
+        "type": "QoL",
+        "value": "+28%",
+        "description": "Improved quality of life with less invasive treatments"
+      },
+      {
+        "type": "Cost",
+        "value": "-$43,500",
+        "description": "Lower treatment costs per patient with early detection"
+      }
+    ],
+    "quantitative": "-65% late-stage diagnoses"
+  },
+  "peer_comparison": {
+    "description": "Top-performing practices achieve 85% colorectal cancer screening rates, 29% higher than your current average of 66%. Reaching this benchmark would prevent an additional 9 late-stage diagnoses annually.",
+    "peer_benchmark": 85,
+    "financial_impact": {
+      "annual_opportunity": "$210,000/year",
+      "math": "$210,000/year = $110,000 in quality bonus payments + $100,000 in early detection treatment margin"
+    },
+    "action_steps": [
+      {
+        "text": "Implement multi-modal patient outreach program",
+        "icon": "users"
+      },
+      {
+        "text": "Create provider-specific screening rate dashboards",
+        "icon": "chart"
+      },
+      {
+        "text": "Develop automated screening due alerts in EHR",
+        "icon": "alert"
+      },
+      {
+        "text": "Establish CRC screening navigator program",
+        "icon": "clipboard"
+      }
+    ]
+  },
+  "weighted_score": 88,
+  "action_steps": [
+    {
+      "text": "Generate lists of patients overdue for CRC screening",
+      "icon": "flag"
+    },
+    {
+      "text": "Implement patient reminder system with multiple modalities",
+      "icon": "document"
+    },
+    {
+      "text": "Develop specific intervention for Dr. Patel and Dr. Rodriguez panels",
+      "icon": "users"
+    },
+    {
+      "text": "Create standing orders for screening colonoscopy referrals",
+      "icon": "clipboard"
+    }
+  ],
+  "suggestions": [
+    {
+      "text": "Explore at-home FIT test options for reluctant patients",
+      "icon": "document"
+    },
+    {
+      "text": "Analyze social determinants of health affecting screening rates",
+      "icon": "chart-line"
+    }
+  ],
+  "drilldowns": [
+    {
+      "label": "View by Patient Demographics",
+      "cohort": "Colorectal Cancer Screening by Demographics",
+      "jsonFile": "crc-screening-demographics.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "View by Screening Method",
+      "cohort": "Colorectal Cancer Screening by Method",
+      "jsonFile": "crc-screening-methods.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "Insurance Coverage Analysis",
+      "cohort": "Colorectal Cancer Screening by Insurance",
+      "jsonFile": "crc-screening-insurance.json",
+      "drilldownLevel": 1
+    }
+  ]
+} 

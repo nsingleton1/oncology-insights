@@ -1,0 +1,131 @@
+{
+  "id": "multiple-myeloma-regimen-margins",
+  "display_name": "Multiple Myeloma Margin Components",
+  "cohort": "Multiple Myeloma, RRMM, Regimen Margin Components (2024–2025)",
+  "insight_type": "Margin Component Analysis",
+  "summary": "Dara-Rd regimen delivers 82% higher net margins vs. Rd due to optimal payer mix, higher reimbursement rates, and operational efficiencies despite higher drug costs.",
+  "chart": {
+    "type": "bar",
+    "unit": "component",
+    "data": [
+      { "name": "Drug Acquisition", "value": -22, "gap": -22, "highlight": true },
+      { "name": "Admin Costs", "value": -5, "gap": -5, "highlight": false },
+      { "name": "Reimbursement", "value": 87, "gap": 87, "highlight": false },
+      { "name": "Supportive Care", "value": -8, "gap": -8, "highlight": false },
+      { "name": "Patient Cost Share", "value": 12, "gap": 12, "highlight": false },
+      { "name": "Net Margin", "value": 64, "gap": 64, "highlight": true }
+    ],
+    "benchmark": 0,
+    "nccn_target": 0
+  },
+  "financial_impact": {
+    "annual_opportunity": "$385,000/year",
+    "math": "$385,000/year = $73,000 margin difference × 35 additional patients × 15% utilization increase"
+  },
+  "clinical_impact": {
+    "description": "Balancing financial margins with clinical outcomes is essential for sustainable care delivery.",
+    "metrics": [
+      {
+        "type": "PFS",
+        "value": "+18.4 months",
+        "description": "Superior PFS with Dara-Rd vs. Rd alone"
+      },
+      {
+        "type": "OS",
+        "value": "+13.3 months",
+        "description": "Overall survival benefit"
+      },
+      {
+        "type": "ORR",
+        "value": "+31%",
+        "description": "Higher objective response rate"
+      },
+      {
+        "type": "QoL",
+        "value": "+24%",
+        "description": "Improved quality of life scores"
+      },
+      {
+        "type": "ToT",
+        "value": "+52%",
+        "description": "Longer time on treatment"
+      }
+    ],
+    "quantitative": "+18.4 months PFS"
+  },
+  "peer_comparison": {
+    "description": "Top-performing practices achieve 8% higher net margins on Dara-Rd than your practice through optimized billing practices and improved payer contracts.",
+    "peer_benchmark": 72,
+    "financial_impact": {
+      "annual_opportunity": "$580,000/year",
+      "math": "$580,000/year = $8,000 additional margin × 73 patients"
+    },
+    "action_steps": [
+      {
+        "text": "Analyze top performer billing and contract strategies",
+        "icon": "chart-line"
+      },
+      {
+        "text": "Implement optimized billing workflow for Dara-based regimens",
+        "icon": "document"
+      },
+      {
+        "text": "Renegotiate payer contracts for Daratumumab reimbursement",
+        "icon": "users"
+      },
+      {
+        "text": "Develop waste minimization protocols for high-cost drugs",
+        "icon": "clipboard"
+      }
+    ]
+  },
+  "weighted_score": 95,
+  "action_steps": [
+    {
+      "text": "Create standardized Dara-Rd administration protocols",
+      "icon": "document"
+    },
+    {
+      "text": "Implement waste reduction strategy for Daratumumab",
+      "icon": "clipboard"
+    },
+    {
+      "text": "Develop patient-specific financial navigation",
+      "icon": "users"
+    },
+    {
+      "text": "Analyze payer-specific reimbursement rates",
+      "icon": "chart-line"
+    }
+  ],
+  "suggestions": [
+    {
+      "text": "Optimize administration scheduling to maximize chair utilization",
+      "icon": "document"
+    },
+    {
+      "text": "Evaluate dosing strategies to minimize waste",
+      "icon": "chart"
+    }
+  ],
+  "drilldowns": [
+    {
+      "label": "View by Provider",
+      "cohort": "Multiple Myeloma Regimen Selection by Provider",
+      "jsonFile": "multiple-myeloma-by-provider.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "View by Payer",
+      "cohort": "Multiple Myeloma Regimen Selection by Payer",
+      "jsonFile": "multiple-myeloma-by-payer.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "Compare Sites",
+      "cohort": "Multiple Myeloma Regimen Selection by Site",
+      "jsonFile": "multiple-myeloma-by-site.json",
+      "drilldownLevel": 1
+    }
+  ]
+} 
