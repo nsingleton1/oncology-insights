@@ -1,21 +1,105 @@
 {
   "id": "biomarker-compliance",
-  "type": "biomarker_analysis",
   "display_name": "Biomarker Testing Compliance",
-  "description": "Analysis of biomarker testing compliance across cancer types",
-  "patient_count": 3850,
-  "summary": "Overall biomarker testing compliance is at 72%, with significant variation by cancer type and practice location.",
-  "created_date": "2023-04-22",
-  "charts": [
+  "cohort": "Solid Tumors (NSCLC, mCRC, Breast) 2024-2025",
+  "insight_type": "Testing Compliance",
+  "summary": "Biomarker testing completion rate is 68%, 17% below benchmark. Improving compliance could yield $235,000/year.",
+  "chart": {
+    "type": "bar",
+    "unit": "cancer_type",
+    "data": [
+      { "name": "NSCLC", "value": 78, "gap": -7, "highlight": false },
+      { "name": "mCRC", "value": 65, "gap": -20, "highlight": true },
+      { "name": "Breast", "value": 72, "gap": -13, "highlight": false },
+      { "name": "Overall", "value": 68, "gap": -17, "highlight": true }
+    ],
+    "benchmark": 85,
+    "nccn_target": 85
+  },
+  "financial_impact": {
+    "annual_opportunity": "$235,000/year",
+    "math": "$235,000/year = 47 patients × $5,000 avg. revenue per appropriate therapy"
+  },
+  "clinical_impact": {
+    "description": "Biomarker testing leads to appropriate targeted therapy selection, improving outcomes and quality of life.",
+    "metrics": [
+      {
+        "type": "OS",
+        "value": "+4.5 months",
+        "description": "Median overall survival benefit with appropriate targeted therapy"
+      },
+      {
+        "type": "PFS",
+        "value": "+3.2 months",
+        "description": "Median progression-free survival benefit"
+      },
+      {
+        "type": "QoL",
+        "value": "+15%",
+        "description": "Enhanced quality of life measures"
+      },
+      {
+        "type": "Hosp",
+        "value": "-25%",
+        "description": "Reduced hospitalization rate"
+      }
+    ],
+    "quantitative": "85% guideline adherence target"
+  },
+  "action_steps": [
     {
-      "title": "Biomarker Testing Compliance by Cancer Type",
-      "chart_type": "bar",
-      "data_source": "biomarker-compliance-details.json"
+      "text": "Implement reflex testing protocols for pathology",
+      "icon": "document"
+    },
+    {
+      "text": "Create biomarker testing order sets in EMR",
+      "icon": "computer"
+    },
+    {
+      "text": "Develop provider alert for untested eligible patients",
+      "icon": "alert"
+    },
+    {
+      "text": "Schedule biomarker testing workflow review",
+      "icon": "users"
     }
   ],
-  "recommendations": [
-    "Implement universal reflex biomarker testing protocols",
-    "Establish quality metrics for biomarker turnaround time",
-    "Develop provider education program on biomarker-guided therapy selection"
+  "suggestions": [
+    "Review tissue collection protocols to ensure adequate specimen quality",
+    "Consider liquid biopsy option for patients with insufficient tissue",
+    "Implement biomarker testing patient education materials",
+    "Evaluate turnaround time for critical biomarker results"
+  ],
+  "drilldowns": [
+    {
+      "label": "View by Payer Type",
+      "cohort": "Solid Tumors, by Payer Type",
+      "jsonFile": "biomarker-compliance-by-payer.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "Compare Sites",
+      "cohort": "Solid Tumors, by Site",
+      "jsonFile": "biomarker-compliance-by-site.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "Turnaround Time",
+      "cohort": "Solid Tumors, Testing TAT",
+      "jsonFile": "biomarker-compliance-tat.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "By Cancer Type",
+      "cohort": "By Cancer Type",
+      "jsonFile": "biomarker-compliance-by-cancer.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "By Provider",
+      "cohort": "By Provider",
+      "jsonFile": "biomarker-compliance-by-provider.json",
+      "drilldownLevel": 1
+    }
   ]
 } 

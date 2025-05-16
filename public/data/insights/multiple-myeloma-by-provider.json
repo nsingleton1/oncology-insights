@@ -1,0 +1,131 @@
+{
+  "id": "multiple-myeloma-by-provider",
+  "display_name": "Multiple Myeloma by Provider",
+  "cohort": "Multiple Myeloma, RRMM, by Provider Regimen Selection (2024–2025)",
+  "insight_type": "Provider-Specific Margin Analysis",
+  "summary": "High variability in provider selection of high-margin regimens. Dr. Thompson uses Dara-based regimens in only 18% of eligible patients vs. practice average of 34%.",
+  "chart": {
+    "type": "bar",
+    "unit": "provider",
+    "data": [
+      { "name": "Dr. Anderson", "value": 58, "gap": 24, "highlight": false },
+      { "name": "Dr. Kumar", "value": 47, "gap": 13, "highlight": false },
+      { "name": "Dr. Orlowski", "value": 42, "gap": 8, "highlight": false },
+      { "name": "Dr. Shah", "value": 26, "gap": -8, "highlight": false },
+      { "name": "Dr. Thompson", "value": 18, "gap": -16, "highlight": true },
+      { "name": "Dr. Richardson", "value": 11, "gap": -23, "highlight": true }
+    ],
+    "benchmark": 34,
+    "nccn_target": 40
+  },
+  "financial_impact": {
+    "annual_opportunity": "$225,000/year",
+    "math": "$225,000/year = 16% utilization gap × 19 patients × $73,000 margin difference"
+  },
+  "clinical_impact": {
+    "description": "Standardizing regimen selection across providers could improve patient outcomes.",
+    "metrics": [
+      {
+        "type": "PFS",
+        "value": "+18.4 months",
+        "description": "Potential PFS improvement with optimized regimen selection"
+      },
+      {
+        "type": "OS",
+        "value": "+13.3 months",
+        "description": "Potential OS improvement"
+      },
+      {
+        "type": "ORR",
+        "value": "+31%",
+        "description": "Higher response rates with Dara-based regimens"
+      },
+      {
+        "type": "DoT",
+        "value": "+42%",
+        "description": "Longer duration of therapy"
+      },
+      {
+        "type": "QoL",
+        "value": "+22%",
+        "description": "Improved quality of life scores"
+      }
+    ],
+    "quantitative": "+18.4 months PFS"
+  },
+  "peer_comparison": {
+    "description": "Top RRMM providers use Dara-based regimens in 55% of eligible patients vs. your practice average of 34%. Dr. Anderson's selection patterns align with top performers.",
+    "peer_benchmark": 55,
+    "financial_impact": {
+      "annual_opportunity": "$450,000/year",
+      "math": "$450,000/year = 21% increase × 29 patients × $73,000 margin difference"
+    },
+    "action_steps": [
+      {
+        "text": "Schedule peer-to-peer learning between Dr. Thompson and Dr. Anderson",
+        "icon": "users"
+      },
+      {
+        "text": "Implement provider-specific regimen selection dashboards",
+        "icon": "chart"
+      },
+      {
+        "text": "Create automated decision support tools in EHR",
+        "icon": "alert"
+      },
+      {
+        "text": "Develop RRMM case review process for non-Dara regimen selections",
+        "icon": "clipboard"
+      }
+    ]
+  },
+  "weighted_score": 89,
+  "action_steps": [
+    {
+      "text": "Create provider-specific reports on regimen selection patterns",
+      "icon": "chart"
+    },
+    {
+      "text": "Implement educational intervention for Dr. Thompson and Dr. Richardson",
+      "icon": "users"
+    },
+    {
+      "text": "Develop standardized regimen selection protocols",
+      "icon": "document"
+    },
+    {
+      "text": "Establish monthly case review for regimen optimization",
+      "icon": "clipboard"
+    }
+  ],
+  "suggestions": [
+    {
+      "text": "Share provider-specific financial and clinical outcomes data",
+      "icon": "chart-line"
+    },
+    {
+      "text": "Analyze factors driving provider regimen selection decisions",
+      "icon": "document"
+    }
+  ],
+  "drilldowns": [
+    {
+      "label": "View by Payer Type",
+      "cohort": "Multiple Myeloma Regimen Selection by Payer",
+      "jsonFile": "multiple-myeloma-by-payer.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "Compare Sites",
+      "cohort": "Multiple Myeloma Regimen Selection by Site",
+      "jsonFile": "multiple-myeloma-by-site.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "Variance by Regimen",
+      "cohort": "Multiple Myeloma Regimen Margin Analysis",
+      "jsonFile": "multiple-myeloma-regimen-margins.json",
+      "drilldownLevel": 1
+    }
+  ]
+} 

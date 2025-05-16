@@ -1,0 +1,130 @@
+{
+  "id": "nsclc-contracts-by-payer",
+  "display_name": "NSCLC Contract Performance by Payer",
+  "cohort": "NSCLC Contract Performance by Payer (2024–2025)",
+  "insight_type": "Payer-Specific Contract Analysis",
+  "summary": "Significant variation in contract performance across payers. Commercial Payer B patients achieve only 62% metric compliance vs. 81% for Medicare, impacting $185,000 in potential bonus payments.",
+  "chart": {
+    "type": "bar",
+    "unit": "payer",
+    "data": [
+      { "name": "Medicare", "value": 81, "gap": 8, "highlight": false },
+      { "name": "Commercial A", "value": 76, "gap": 3, "highlight": false },
+      { "name": "Medicaid", "value": 72, "gap": -1, "highlight": false },
+      { "name": "Commercial B", "value": 62, "gap": -11, "highlight": true },
+      { "name": "Commercial C", "value": 68, "gap": -5, "highlight": true }
+    ],
+    "benchmark": 73,
+    "nccn_target": 80
+  },
+  "financial_impact": {
+    "annual_opportunity": "$185,000/year",
+    "math": "$185,000/year = 2 underperforming payers × $92,500 avg. payer-specific bonus"
+  },
+  "clinical_impact": {
+    "description": "Addressing payer-specific barriers can reduce disparities in care quality.",
+    "metrics": [
+      {
+        "type": "Equity",
+        "value": "+27%",
+        "description": "Improved equity in care quality across payers"
+      },
+      {
+        "type": "OS",
+        "value": "+3.2 months",
+        "description": "Potential survival benefit for Commercial B/C patients"
+      },
+      {
+        "type": "Hosp",
+        "value": "-38%",
+        "description": "Potential reduction in hospitalization rates"
+      },
+      {
+        "type": "Auth",
+        "value": "-65%",
+        "description": "Reduced prior authorization denials"
+      },
+      {
+        "type": "TTT",
+        "value": "-8.5 days",
+        "description": "Reduced time to treatment initiation"
+      }
+    ],
+    "quantitative": "-38% hospitalizations"
+  },
+  "peer_comparison": {
+    "description": "Top-performing practices achieve consistent metrics across all payers with <5% variation. Your 19% variation between Medicare and Commercial B significantly exceeds benchmarks.",
+    "peer_benchmark": 5,
+    "financial_impact": {
+      "annual_opportunity": "$280,000/year",
+      "math": "$280,000/year = $185,000 direct bonus opportunity + $95,000 additional shared savings"
+    },
+    "action_steps": [
+      {
+        "text": "Analyze Commercial B/C prior authorization patterns",
+        "icon": "chart-line"
+      },
+      {
+        "text": "Implement payer-specific authorization specialists",
+        "icon": "users"
+      },
+      {
+        "text": "Create payer-specific metric tracking dashboards",
+        "icon": "chart"
+      },
+      {
+        "text": "Develop tailored clinical pathways by payer",
+        "icon": "document"
+      }
+    ]
+  },
+  "weighted_score": 91,
+  "action_steps": [
+    {
+      "text": "Conduct Commercial B contract analysis",
+      "icon": "document"
+    },
+    {
+      "text": "Implement authorization tracking for Commercial B/C",
+      "icon": "clipboard"
+    },
+    {
+      "text": "Establish payer-specific treatment approval workflows",
+      "icon": "users"
+    },
+    {
+      "text": "Create payer relations improvement team",
+      "icon": "users"
+    }
+  ],
+  "suggestions": [
+    {
+      "text": "Negotiate improved authorization processes with Commercial B",
+      "icon": "document"
+    },
+    {
+      "text": "Analyze biomarker testing coverage policies across payers",
+      "icon": "chart"
+    }
+  ],
+  "drilldowns": [
+    {
+      "label": "View by Provider",
+      "cohort": "NSCLC Contract Performance by Provider",
+      "jsonFile": "nsclc-contracts-by-provider.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "Compare Sites",
+      "cohort": "NSCLC Contract Performance by Site",
+      "jsonFile": "nsclc-contracts-by-site.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "View Trends",
+      "cohort": "NSCLC Contract Metrics Historical Trends",
+      "jsonFile": "nsclc-contracts-trends.json",
+      "drilldownLevel": 1
+    }
+  ]
+} 

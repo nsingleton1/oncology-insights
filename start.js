@@ -1,14 +1,26 @@
-const { exec } = require("child_process");
-const PORT = process.env.PORT || 3000;
-console.log(`Starting server on port ${PORT}`);
-exec(`npx serve -s build -l ${PORT}`, (error, stdout, stderr) => {
-  if (error) {
-    console.error(`Error: ${error.message}`);
-    return;
+const { spawn } = require('child_process');
+const path = require('path');
+
+console.log('Starting the Oncology Insights application...');
+
+// Run the npm start command
+const npmStart = spawn('npm', ['start'], {
+  stdio: 'inherit',
+  shell: true,
+  env: {
+    ...process.env,
+    NODE_ENV: 'development',
+    CHOKIDAR_USEPOLLING: 'true',
+    WATCHPACK_POLLING: 'true',
+    WDS_SOCKET_PORT: '3000'
   }
-  if (stderr) {
-    console.error(`Stderr: ${stderr}`);
-    return;
-  }
-  console.log(`Server output: ${stdout}`);
+});
+
+npmStart.on('error', (error) => {
+  console.error('Failed to start npm process:', error);
+});
+
+process.on('SIGINT', () => {
+  npmStart.kill('SIGINT');
+  process.exit(0);
 }); 

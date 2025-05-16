@@ -1,21 +1,137 @@
 {
-  "id": "crc-biomarker-insights",
-  "type": "biomarker_analysis",
-  "display_name": "Colorectal Cancer Biomarker Testing Patterns",
-  "description": "Analysis of biomarker testing rates and patterns in CRC patients",
-  "patient_count": 980,
-  "summary": "Biomarker testing for CRC patients is inconsistent, with only 65% of eligible patients receiving complete panel testing.",
-  "created_date": "2023-04-18",
-  "charts": [
+  "id": "crc-biomarker",
+  "display_name": "CRC Biomarker Testing",
+  "cohort": "Colorectal Cancer, Biomarker Testing Compliance (2024–2025)",
+  "insight_type": "Precision Medicine Utilization",
+  "summary": "CRC biomarker testing averages 62% compliance, significantly below the 85% benchmark. Improving MSI/MMR, RAS/RAF and HER2 testing represents a $295,000 annual opportunity.",
+  "chart": {
+    "type": "bar",
+    "unit": "biomarker",
+    "data": [
+      { "name": "MSI/MMR", "value": 78, "gap": -7, "highlight": false },
+      { "name": "KRAS", "value": 82, "gap": -3, "highlight": false },
+      { "name": "NRAS", "value": 64, "gap": -21, "highlight": true },
+      { "name": "BRAF", "value": 58, "gap": -27, "highlight": true },
+      { "name": "HER2", "value": 42, "gap": -43, "highlight": true },
+      { "name": "NTRK", "value": 38, "gap": -47, "highlight": true }
+    ],
+    "benchmark": 85,
+    "nccn_target": 95
+  },
+  "financial_impact": {
+    "annual_opportunity": "$295,000/year",
+    "math": "$295,000/year = 29% avg testing gap × 38 eligible patients × $26,800 precision therapy value"
+  },
+  "clinical_impact": {
+    "description": "Comprehensive CRC biomarker testing improves treatment selection and patient outcomes.",
+    "metrics": [
+      {
+        "type": "PFS",
+        "value": "+5.8 months",
+        "description": "Improved progression-free survival with matched therapies"
+      },
+      {
+        "type": "OS",
+        "value": "+9.4 months",
+        "description": "Overall survival benefit with biomarker-guided treatment"
+      },
+      {
+        "type": "ORR",
+        "value": "+34%",
+        "description": "Higher objective response rate with matched therapies"
+      },
+      {
+        "type": "TRM",
+        "value": "-58%",
+        "description": "Reduced treatment-related mortality"
+      },
+      {
+        "type": "QoL",
+        "value": "+27%",
+        "description": "Improved quality of life scores"
+      }
+    ],
+    "quantitative": "+9.4 months OS"
+  },
+  "peer_comparison": {
+    "description": "Top-performing CRC programs achieve >85% comprehensive biomarker testing compliance through reflex testing protocols.",
+    "peer_benchmark": 85,
+    "financial_impact": {
+      "annual_opportunity": "$325,000/year",
+      "math": "$325,000/year = 32% gap to peer benchmark × 40 patients × $25,400 improved care value"
+    },
+    "action_steps": [
+      {
+        "text": "Implement CRC-specific reflex molecular testing panel",
+        "icon": "document"
+      },
+      {
+        "text": "Create comprehensive testing protocol for all CRC patients",
+        "icon": "clipboard"
+      },
+      {
+        "text": "Develop automated biomarker tracking system",
+        "icon": "chart"
+      },
+      {
+        "text": "Establish CRC precision medicine tumor board",
+        "icon": "users"
+      }
+    ]
+  },
+  "weighted_score": 93,
+  "action_steps": [
     {
-      "title": "CRC Biomarker Testing Compliance by Provider",
-      "chart_type": "bar",
-      "data_source": "crc-biomarker-details.json"
+      "text": "Implement comprehensive NGS panel as standard for all mCRC",
+      "icon": "document"
+    },
+    {
+      "text": "Create provider education on emerging CRC biomarkers",
+      "icon": "users"
+    },
+    {
+      "text": "Develop universal MSI/MMR testing protocol at diagnosis",
+      "icon": "clipboard"
+    },
+    {
+      "text": "Establish biomarker testing KPI tracking by provider",
+      "icon": "chart"
     }
   ],
-  "recommendations": [
-    "Standardize CRC biomarker testing protocols across all practice sites",
-    "Implement automatic order sets for newly diagnosed CRC patients",
-    "Establish quality metrics for biomarker testing turnaround times"
+  "suggestions": [
+    {
+      "text": "Consider tissue preservation protocol optimization",
+      "icon": "clipboard"
+    },
+    {
+      "text": "Evaluate HER2 testing implementation pathway",
+      "icon": "search"
+    }
+  ],
+  "drilldowns": [
+    {
+      "label": "By Provider",
+      "cohort": "CRC Testing by Provider",
+      "jsonFile": "crc-biomarker-by-provider.json",
+      "drilldownLevel": 3
+    },
+    {
+      "label": "By Testing Method",
+      "cohort": "CRC Testing by Method",
+      "jsonFile": "crc-biomarker-by-method.json",
+      "drilldownLevel": 3
+    },
+    {
+      "label": "All Biomarkers",
+      "cohort": "Biomarker Testing by Cancer Type",
+      "jsonFile": "biomarker-compliance-by-cancer.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "Overall Compliance",
+      "cohort": "Biomarker Testing Compliance",
+      "jsonFile": "biomarker-compliance.json",
+      "drilldownLevel": 0
+    }
   ]
 } 

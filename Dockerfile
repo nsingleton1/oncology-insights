@@ -12,26 +12,16 @@ RUN npm install --legacy-peer-deps
 # Copy source code
 COPY . .
 
-# Create public/data directory structure
-RUN mkdir -p public/data/insights
+# Make sure our scripts are executable
+RUN chmod +x scripts/*.js
 
-# Ensure data files are properly copied to the public directory
-# This is critical for the app to function correctly
-RUN cp -r src/data/insights/* public/data/insights/ || echo "No data files to copy"
+# Expose the port that React development server uses
+EXPOSE 3000
 
-# Make sure the build can access the data files
-RUN ls -la public/data/insights/ || echo "Directory listing failed"
+# Set environment variables
+ENV NODE_ENV=development
+ENV CHOKIDAR_USEPOLLING=true
+ENV WATCHPACK_POLLING=true
 
-# Build the application - if this fails, let it fail
-RUN npm run build
-
-# Verify the build directory contains the data files
-RUN mkdir -p build/data/insights
-RUN cp -r public/data/insights/* build/data/insights/ || echo "No data files to copy to build"
-RUN ls -la build/data/insights/ || echo "Directory listing failed"
-
-# Expose the port
-EXPOSE 8080
-
-# Start command
-CMD ["npx", "serve", "-s", "build", "-l", "8080"] 
+# Use the exact same start command as locally
+CMD ["npm", "start"] 

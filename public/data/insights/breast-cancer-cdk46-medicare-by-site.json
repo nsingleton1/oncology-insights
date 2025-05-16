@@ -1,0 +1,45 @@
+{
+  "cohort": "ER+/HER2- MBC, 2L, Medicare, by Site (2024–2025)",
+  "insight_type": "Medicare Site Variation",
+  "summary": "Site C has a 22% CDK4/6i utilization rate for Medicare patients, 16% below peer average. Connecting Medicare patients to assistance programs could yield $68,000/year.",
+  "chart": {
+    "type": "bar",
+    "unit": "site",
+    "data": [
+      { "name": "Site A", "value": 42, "gap": 4, "highlight": false },
+      { "name": "Site B", "value": 34, "gap": -4, "highlight": false },
+      { "name": "Site C", "value": 22, "gap": -16, "highlight": true }
+    ],
+    "benchmark": 38,
+    "nccn_target": 38
+  },
+  "financial_impact": {
+    "annual_opportunity": "$68,000/year",
+    "math": "$68,000/year = 18 Medicare patients × $3,800 margin per patient"
+  },
+  "clinical_impact": {
+    "description": "Improving Medicare utilization at Site C increases survival.",
+    "quantitative": "+7.8 months PFS"
+  },
+  "peer_comparison": {
+    "description": "Medicare peer average across sites is 38%.",
+    "peer_benchmark": 38
+  },
+  "weighted_score": 82,
+  "action_steps": [
+    "Implement Medicare financial assistance navigator at Site C",
+    "Review Site C workflow for Medicare eligibility",
+    "Share Medicare coverage resources with Site C providers"
+  ],
+  "suggestions": [
+    "Partner with Medicare Advantage plans for better CDK4/6i coverage"
+  ],
+  "drilldowns": [
+    {
+      "label": "Variance by Provider",
+      "cohort": "ER+/HER2- MBC, 2L, Medicare, Site C, by Provider",
+      "jsonFile": "breast-cancer-cdk46-medicare-sitec-by-provider.json",
+      "drilldownLevel": 3
+    }
+  ]
+} 

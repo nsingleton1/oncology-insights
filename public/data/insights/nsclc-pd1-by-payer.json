@@ -1,0 +1,125 @@
+{
+  "id": "nsclc-pd1-by-payer",
+  "display_name": "NSCLC PD-L1≥50% (By Payer)",
+  "cohort": "NSCLC PD-L1 ≥ 50%, First Line, by Payer, Q1 2023",
+  "insight_type": "Treatment Patterns by Payer",
+  "summary": "Pembrolizumab monotherapy utilization varies by payer, with Medicare patients receiving guideline-concordant care at 82% while Commercial patients are at only 68%.",
+  "recommendation": "Address payer-specific barriers to pembrolizumab monotherapy, particularly focusing on commercial payers.",
+  "financial_impact": {
+    "annual_opportunity": "$210,000/year",
+    "math": "Improving pembrolizumab monotherapy utilization in patients with commercial insurance could generate approximately $210,000 in annual savings."
+  },
+  "financial_impact_description": "Improving pembrolizumab monotherapy utilization in patients with commercial insurance could generate approximately $210,000 in annual savings.",
+  "peer_financial_impact": 250000,
+  "peer_financial_impact_description": "Peer organizations achieve better utilization with commercial payers, representing a $250,000 opportunity.",
+  "action_steps": [
+    {
+      "text": "Analyze approval rates and rejection reasons for pembrolizumab monotherapy by commercial payers",
+      "icon": "chart-bar"
+    },
+    {
+      "text": "Develop payer-specific prior authorization support",
+      "icon": "user-group"
+    },
+    {
+      "text": "Review testing and referral patterns for commercially insured patients",
+      "icon": "star"
+    }
+  ],
+  "peer_action_steps": [
+    "Benchmark against organizations with higher commercial payer utilization",
+    "Consider value-based contracts that incentivize appropriate care",
+    "Develop specific strategies for working with challenging payers"
+  ],
+  "chart_data": {
+    "categories": [
+      "Medicare",
+      "Commercial",
+      "Medicaid",
+      "Uninsured",
+      "Other"
+    ],
+    "values": [
+      82,
+      68,
+      75,
+      70,
+      72
+    ],
+    "peer_values": [
+      85,
+      80,
+      78,
+      70,
+      75
+    ],
+    "target_values": [
+      85,
+      85,
+      85,
+      75,
+      80
+    ]
+  },
+  "drilldowns": [],
+  "chart": {
+    "type": "bar",
+    "unit": "provider",
+    "data": [
+      {
+        "name": "Medicare",
+        "value": 82,
+        "gap": 0,
+        "highlight": true
+      },
+      {
+        "name": "Commercial",
+        "value": 68,
+        "gap": 0,
+        "highlight": false
+      },
+      {
+        "name": "Medicaid",
+        "value": 75,
+        "gap": 0,
+        "highlight": false
+      },
+      {
+        "name": "Uninsured",
+        "value": 70,
+        "gap": 0,
+        "highlight": false
+      },
+      {
+        "name": "Other",
+        "value": 72,
+        "gap": 0,
+        "highlight": false
+      }
+    ],
+    "benchmark": 65,
+    "nccn_target": 65
+  },
+  "clinical_impact": {
+    "description": "Clinical impact analysis based on outcomes data and peer-reviewed literature.",
+    "metrics": [
+      {
+        "type": "PFS",
+        "value": "+3.2 months",
+        "description": "Potential median progression-free survival improvement"
+      },
+      {
+        "type": "OS",
+        "value": "+5.1 months",
+        "description": "Potential median overall survival improvement"
+      },
+      {
+        "type": "QoL",
+        "value": "+15%",
+        "description": "Enhanced quality of life measures"
+      }
+    ],
+    "quantitative": "+5.1 months OS"
+  },
+  "weighted_score": 73
+}

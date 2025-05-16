@@ -1,0 +1,138 @@
+{
+  "id": "breast-biomarker-by-provider",
+  "display_name": "Breast Cancer Biomarker Testing by Provider",
+  "cohort": "Breast Cancer Biomarker Testing, by Provider (2024–2025)",
+  "insight_type": "Precision Medicine Utilization",
+  "summary": "Provider variation in breast cancer biomarker testing: Dr. Martinez tests 97% of standard markers, but emerging biomarkers like PIK3CA and BRCA1/2 show lower adoption across providers.",
+  "chart": {
+    "type": "bar",
+    "unit": "provider",
+    "data": [
+      { "name": "Dr. Martinez", "value": 97, "gap": 12, "highlight": false },
+      { "name": "Dr. Johnson", "value": 94, "gap": 9, "highlight": false },
+      { "name": "Dr. Lee", "value": 92, "gap": 7, "highlight": false },
+      { "name": "Dr. Chen", "value": 85, "gap": 0, "highlight": false },
+      { "name": "Dr. Smith", "value": 82, "gap": -3, "highlight": false },
+      { "name": "Dr. Williams", "value": 76, "gap": -9, "highlight": true },
+      { "name": "Dr. Rodriguez", "value": 78, "gap": -7, "highlight": true }
+    ],
+    "benchmark": 85,
+    "nccn_target": 95
+  },
+  "financial_impact": {
+    "annual_opportunity": "$165,000/year",
+    "math": "$165,000/year = 8% testing gap (lagging providers) × 75 breast cancer patients × $27,500 precision therapy value"
+  },
+  "clinical_impact": {
+    "description": "Standardizing breast cancer biomarker testing across providers improves therapy selection and outcomes.",
+    "metrics": [
+      {
+        "type": "PFS",
+        "value": "+5.8 months",
+        "description": "Improved progression-free survival with matched therapies"
+      },
+      {
+        "type": "OS",
+        "value": "+7.3 months",
+        "description": "Overall survival benefit with biomarker-guided treatment"
+      },
+      {
+        "type": "ORR",
+        "value": "+32%",
+        "description": "Higher objective response rate with matched therapies"
+      },
+      {
+        "type": "QoL",
+        "value": "+26%",
+        "description": "Improved quality of life scores"
+      },
+      {
+        "type": "TTF",
+        "value": "-38%",
+        "description": "Reduced time to treatment failure"
+      }
+    ],
+    "quantitative": "+7.3 months OS"
+  },
+  "peer_comparison": {
+    "description": "Leading breast oncologists achieve >95% comprehensive biomarker testing rates, particularly with expanded molecular testing.",
+    "peer_benchmark": 95,
+    "financial_impact": {
+      "annual_opportunity": "$210,000/year",
+      "math": "$210,000/year = $165,000 direct therapy value + $45,000 clinical trial enrollment"
+    },
+    "action_steps": [
+      {
+        "text": "Standardize expanded biomarker protocols across all providers",
+        "icon": "document"
+      },
+      {
+        "text": "Create provider-specific performance dashboards",
+        "icon": "chart"
+      },
+      {
+        "text": "Develop PIK3CA testing pathway for all HR+ metastatic cases",
+        "icon": "cog"
+      },
+      {
+        "text": "Establish automated BRCA1/2 testing triggers",
+        "icon": "bell"
+      }
+    ]
+  },
+  "weighted_score": 89,
+  "action_steps": [
+    {
+      "text": "Implement standardized PIK3CA testing protocol for HR+/HER2-",
+      "icon": "document"
+    },
+    {
+      "text": "Create provider-specific biomarker compliance dashboard",
+      "icon": "chart"
+    },
+    {
+      "text": "Schedule provider education on emerging breast biomarkers",
+      "icon": "calendar"
+    },
+    {
+      "text": "Develop EMR-based expanded biomarker testing alert",
+      "icon": "bell"
+    }
+  ],
+  "suggestions": [
+    {
+      "text": "Analyze patient demographics by provider",
+      "icon": "search"
+    },
+    {
+      "text": "Evaluate provider understanding of PIK3CA clinical utility",
+      "icon": "clipboard"
+    }
+  ],
+  "drilldowns": [
+    {
+      "label": "By Testing Method",
+      "cohort": "Breast Cancer Testing by Method",
+      "jsonFile": "breast-biomarker-by-method.json",
+      "drilldownLevel": 3
+    },
+    {
+      "label": "All Breast Biomarkers",
+      "cohort": "Breast Cancer Biomarker Testing",
+      "jsonFile": "breast-biomarker.json",
+      "drilldownLevel": 2
+    },
+    {
+      "label": "All Providers",
+      "cohort": "Biomarker Testing by Provider",
+      "jsonFile": "biomarker-compliance-by-provider.json",
+      "drilldownLevel": 1
+    },
+    {
+      "label": "Overall Compliance",
+      "cohort": "Biomarker Testing Compliance",
+      "jsonFile": "biomarker-compliance.json",
+      "drilldownLevel": 0
+    }
+  ]
+} 
