@@ -10,7 +10,7 @@ import {
   ResponsiveContainer,
   Cell
 } from 'recharts';
-import { InsightData } from '../types';
+import { InsightData, ChartDataPoint } from '../types';
 import { 
   DocumentIcon, 
   ChartBarIcon, 
@@ -73,7 +73,7 @@ export const InsightDisplayModule: React.FC<InsightDisplayModuleProps> = ({ insi
   
   // Check if the chart data is in the new format (nested under 'chart' property)
   // or the old format (directly in 'chart_data' property)
-  const chartData = insight.chart?.data || insight.chart_data || [];
+  const chartData: ChartDataPoint[] = (insight.chart?.data || insight.chart_data || []) as ChartDataPoint[];
   
   // Get the appropriate target based on view mode
   const nccnTarget = insight.chart?.nccn_target || insight.benchmark || 65;

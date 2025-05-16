@@ -1,7 +1,0 @@
-{
-  "/api/insights": "/insights",
-  "/api/insights/:id": "/insights/:id",
-  "/api/biomarker-compliance": "/biomarker-compliance",
-  "/api/users": "/users",
-  "/api/users/:id": "/users/:id"
-} 
