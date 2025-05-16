@@ -17,12 +17,15 @@ RUN chmod +x scripts/*.js || true
 
 # Expose the port that React development server uses
 EXPOSE 3000
+# Expose the port for the mock API server
+EXPOSE 3001
 
 # Set environment variables
 ENV NODE_ENV=development
 ENV CHOKIDAR_USEPOLLING=true
 ENV WATCHPACK_POLLING=true
 ENV WDS_SOCKET_PORT=3000
+ENV REACT_APP_DATA_SOURCE=static
 
-# Use the exact same start command as locally
-CMD ["npm", "start"] 
+# Use the dev script to run both React and mock API
+CMD ["npm", "run", "dev"] 
