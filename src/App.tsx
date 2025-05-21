@@ -187,6 +187,18 @@ const App: React.FC = () => {
     }, 1000);
   }, []);
 
+  // Add password check on first load
+  useEffect(() => {
+    const checkPassword = () => {
+      const password = prompt("Please enter password to access OncoInsights:");
+      if (password !== "pbi") {
+        alert("Incorrect password");
+        checkPassword();
+      }
+    };
+    checkPassword();
+  }, []);
+
   // Handle navigation from sidebar
   const handleNavigate = (section: string) => {
     debugLog('Navigation handler called with section:', section);
