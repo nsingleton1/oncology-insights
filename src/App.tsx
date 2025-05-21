@@ -7,6 +7,7 @@ import { LoadingSimulationModule } from "./components/LoadingSimulationModule";
 import { NotificationModule } from "./components/NotificationModule";
 import { InsightData, CohortPrompt, Tab } from "./types";
 import { v4 as uuidv4 } from 'uuid';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 
 // Define our custom insights tracker
 interface InsightTracker {
@@ -124,6 +125,7 @@ const App: React.FC = () => {
   const [showSplash, setShowSplash] = useState<boolean>(true);
   const [showCohortInput, setShowCohortInput] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState<string>("insights");
+  const [sidebarVisible, setSidebarVisible] = useState(true);
   
   // Load starred insights from localStorage or use defaults (which is now an empty array)
   const [starredInsightIds, setStarredInsightIds] = useState<string[]>(() => {
@@ -868,44 +870,38 @@ const App: React.FC = () => {
     );
   }
 
+  // Main UI rendering (after authentication)
   return (
-    <div className="flex h-screen overflow-hidden bg-white text-gray-900 font-sans">
-      <SidebarModule 
-        onInsightSelect={handleStarredInsightSelect}
-        onNavigate={handleNavigate}
-        onInsightUnstar={handleSidebarUnstar}
-        starredInsights={Object.values(activeStarredInsights).map(info => {
-          // Try to find the corresponding insight data to get display_name
-          let displayName = info.title;
-          
-          // If we know the JSON file, try to fetch it and get display_name (for next render)
-          if (info.jsonFile) {
-            // This is an asynchronous operation that will update for the next render
-            fetch(`/data/insights/${info.jsonFile}`)
-              .then(response => response.json())
-              .then(data => {
-                if (data.display_name && info.title !== data.display_name) {
-                  // Update the custom insight title if needed
-                  setCustomStarredInsights(prev => ({
-                    ...prev,
-                    [info.id]: {
-                      ...prev[info.id],
-                      title: data.display_name
-                    }
-                  }));
-                }
-              })
-              .catch(err => console.error(`Error fetching display name for ${info.jsonFile}:`, err));
-          }
-          
-          return {
-            id: info.id,
-            title: displayName,
-            jsonFile: info.jsonFile
-          };
-        })}
-      />
-      <main className="flex-1 flex flex-col overflow-hidden">
+    <div className="flex h-screen bg-gray-100">
+      {sidebarVisible && (
+        <div className="relative">
+          <SidebarModule
+            activeSection={activeSection}
+            onNavigate={handleNavigate}
+            starredInsightIds={starredInsightIds}
+            customStarredInsights={customStarredInsights}
+            onUnstar={handleSidebarUnstar}
+            onCategorySelect={handleCategorySelect}
+          />
+          <button
+            onClick={() => setSidebarVisible(false)}
+            className="absolute bottom-4 -right-3 bg-white p-1 rounded-full shadow-md hover:bg-gray-50"
+            title="Hide sidebar"
+          >
+            <ChevronLeftIcon className="h-4 w-4 text-gray-600" />
+          </button>
+        </div>
+      )}
+      <div className="flex-1 flex flex-col overflow-hidden">
+        {!sidebarVisible && (
+          <button
+            onClick={() => setSidebarVisible(true)}
+            className="absolute top-4 left-4 bg-white p-1 rounded-full shadow-md hover:bg-gray-50"
+            title="Show sidebar"
+          >
+            <ChevronRightIcon className="h-4 w-4 text-gray-600" />
+          </button>
+        )}
         {tabs.length > 0 && (
           <TabManagementModule 
             tabs={tabs}
@@ -973,7 +969,7 @@ const App: React.FC = () => {
             </svg>
           </button>
         )}
-      </main>
+      </div>
     </div>
   );
 };

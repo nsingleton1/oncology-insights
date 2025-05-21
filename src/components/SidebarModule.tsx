@@ -8,11 +8,13 @@ interface StarredInsight {
   jsonFile: string;
 }
 
-interface SidebarModuleProps {
-  onInsightSelect?: (insightId: string) => void;
-  onNavigate?: (section: string) => void;
-  starredInsights?: StarredInsight[];
-  onInsightUnstar?: (insightId: string) => void;
+export interface SidebarModuleProps {
+  activeSection: string;
+  onNavigate: (section: string) => void;
+  starredInsightIds: string[];
+  customStarredInsights: Record<string, any>;
+  onUnstar: (insightId: string) => void;
+  onCategorySelect: (category: any) => Promise<void>;
 }
 
 // Debug log function for troubleshooting
