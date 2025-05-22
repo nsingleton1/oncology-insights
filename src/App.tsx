@@ -757,40 +757,13 @@ const App: React.FC = () => {
   if (activeInsight === null && tabs.length === 0) {
     return (
       <div className="flex h-screen bg-white text-gray-900 font-sans">
-        <SidebarModule 
-          onInsightSelect={handleStarredInsightSelect}
+        <SidebarModule
+          activeSection={activeSection}
           onNavigate={handleNavigate}
-          onInsightUnstar={handleSidebarUnstar}
-          starredInsights={Object.values(activeStarredInsights).map(info => {
-            // Try to find the corresponding insight data to get display_name
-            let displayName = info.title;
-            
-            // If we know the JSON file, try to fetch it and get display_name (for next render)
-            if (info.jsonFile) {
-              // This is an asynchronous operation that will update for the next render
-              fetch(`/data/insights/${info.jsonFile}`)
-                .then(response => response.json())
-                .then(data => {
-                  if (data.display_name && info.title !== data.display_name) {
-                    // Update the custom insight title if needed
-                    setCustomStarredInsights(prev => ({
-                      ...prev,
-                      [info.id]: {
-                        ...prev[info.id],
-                        title: data.display_name
-                      }
-                    }));
-                  }
-                })
-                .catch(err => console.error(`Error fetching display name for ${info.jsonFile}:`, err));
-            }
-            
-            return {
-              id: info.id,
-              title: displayName,
-              jsonFile: info.jsonFile
-            };
-          })}
+          starredInsightIds={starredInsightIds}
+          customStarredInsights={customStarredInsights}
+          onUnstar={handleSidebarUnstar}
+          onCategorySelect={handleCategorySelect}
         />
         <main className="flex-1 flex flex-col overflow-auto">
           <div className="flex-1 overflow-auto bg-gradient-to-br from-white to-blue-50">
