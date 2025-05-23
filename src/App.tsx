@@ -757,15 +757,35 @@ const App: React.FC = () => {
   if (activeInsight === null && tabs.length === 0) {
     return (
       <div className="flex h-screen bg-white text-gray-900 font-sans">
-        <SidebarModule
-          activeSection={activeSection}
-          onNavigate={handleNavigate}
-          starredInsightIds={starredInsightIds}
-          customStarredInsights={customStarredInsights}
-          onUnstar={handleSidebarUnstar}
-          onCategorySelect={handleCategorySelect}
-        />
-        <main className="flex-1 flex flex-col overflow-auto">
+        {sidebarVisible && (
+          <div className="relative">
+            <SidebarModule
+              activeSection={activeSection}
+              onNavigate={handleNavigate}
+              starredInsightIds={starredInsightIds}
+              customStarredInsights={customStarredInsights}
+              onUnstar={handleSidebarUnstar}
+              onCategorySelect={handleCategorySelect}
+            />
+            <button
+              onClick={() => setSidebarVisible(false)}
+              className="absolute bottom-4 -right-3 bg-white p-2 rounded-full shadow-lg hover:bg-gray-50 transition-all border border-gray-200 z-10"
+              title="Hide sidebar"
+            >
+              <ChevronLeftIcon className="h-5 w-5 text-gray-600" />
+            </button>
+          </div>
+        )}
+        <main className="flex-1 flex flex-col overflow-auto relative">
+          {!sidebarVisible && (
+            <button
+              onClick={() => setSidebarVisible(true)}
+              className="absolute top-4 left-4 bg-white p-2 rounded-full shadow-lg hover:bg-gray-50 transition-all border border-gray-200 z-10"
+              title="Show sidebar"
+            >
+              <ChevronRightIcon className="h-5 w-5 text-gray-600" />
+            </button>
+          )}
           <div className="flex-1 overflow-auto bg-gradient-to-br from-white to-blue-50">
             <div className="max-w-6xl mx-auto p-8 space-y-6 pb-24">
               {/* Beautiful Header with Gradient */}
@@ -858,21 +878,21 @@ const App: React.FC = () => {
           />
           <button
             onClick={() => setSidebarVisible(false)}
-            className="absolute bottom-4 -right-3 bg-white p-1 rounded-full shadow-md hover:bg-gray-50"
+            className="absolute bottom-4 -right-3 bg-white p-2 rounded-full shadow-lg hover:bg-gray-50 transition-all border border-gray-200 z-10"
             title="Hide sidebar"
           >
-            <ChevronLeftIcon className="h-4 w-4 text-gray-600" />
+            <ChevronLeftIcon className="h-5 w-5 text-gray-600" />
           </button>
         </div>
       )}
-      <div className="flex-1 flex flex-col overflow-hidden">
+      <div className="flex-1 flex flex-col overflow-hidden relative">
         {!sidebarVisible && (
           <button
             onClick={() => setSidebarVisible(true)}
-            className="absolute top-4 left-4 bg-white p-1 rounded-full shadow-md hover:bg-gray-50"
+            className="absolute top-4 left-4 bg-white p-2 rounded-full shadow-lg hover:bg-gray-50 transition-all border border-gray-200 z-10"
             title="Show sidebar"
           >
-            <ChevronRightIcon className="h-4 w-4 text-gray-600" />
+            <ChevronRightIcon className="h-5 w-5 text-gray-600" />
           </button>
         )}
         {tabs.length > 0 && (
