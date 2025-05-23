@@ -1,12 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { ChartBarIcon, Cog6ToothIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import React, { useState } from 'react';
+import { ChartBarIcon, Cog6ToothIcon } from '@heroicons/react/24/outline';
 import { StarIcon as StarIconSolid } from '@heroicons/react/24/solid';
-
-interface StarredInsight {
-  id: string;
-  title: string;
-  jsonFile: string;
-}
 
 export interface SidebarModuleProps {
   activeSection: string;
@@ -17,59 +11,15 @@ export interface SidebarModuleProps {
   onCategorySelect: (category: any) => Promise<void>;
 }
 
-// Debug log function for troubleshooting
-const debugLog = (message: string, data?: any) => {
-  const timestamp = new Date().toISOString();
-  console.log(`[${timestamp}] SidebarModule: ${message}`, data || '');
-};
-
-export const SidebarModule: React.FC<SidebarModuleProps> = ({ 
-  onInsightSelect, 
+export const SidebarModule: React.FC<SidebarModuleProps> = ({
+  activeSection,
   onNavigate,
-  starredInsights = [], // Default to empty array if not provided
-  onInsightUnstar
+  starredInsightIds,
+  customStarredInsights,
+  onUnstar,
+  onCategorySelect
 }) => {
   const [hoveredInsight, setHoveredInsight] = useState<string | null>(null);
-  
-  // Log initial props to ensure they're passed correctly
-  useEffect(() => {
-    debugLog('Mounted with props:', { 
-      hasInsightSelect: !!onInsightSelect, 
-      hasNavigate: !!onNavigate,
-      hasUnstar: !!onInsightUnstar,
-      starredInsightsCount: starredInsights.length,
-      starredInsightIds: starredInsights.map(i => i.id)
-    });
-  }, [onInsightSelect, onNavigate, onInsightUnstar, starredInsights]);
-
-  const handleInsightClick = (insightId: string) => {
-    debugLog('Starred insight clicked:', insightId);
-    if (onInsightSelect) {
-      onInsightSelect(insightId);
-    } else {
-      console.error('No onInsightSelect handler provided');
-    }
-  };
-
-  const handleUnstar = (event: React.MouseEvent, insightId: string) => {
-    event.stopPropagation(); // Prevent insight selection
-    debugLog('Unstarring insight:', insightId);
-    if (onInsightUnstar) {
-      onInsightUnstar(insightId);
-    } else {
-      console.error('No onInsightUnstar handler provided');
-    }
-  };
-
-  const handleNavClick = (navItem: string) => {
-    debugLog('Navigation item clicked:', navItem);
-    // Call parent handler
-    if (onNavigate) {
-      onNavigate(navItem);
-    } else {
-      console.error('No onNavigate handler provided');
-    }
-  };
 
   return (
     <aside className="w-56 bg-[#0e1b38] text-white flex flex-col h-screen shadow-md" style={{ minWidth: '220px' }}>
@@ -82,47 +32,41 @@ export const SidebarModule: React.FC<SidebarModuleProps> = ({
             OncoInsights
           </span>
         </h1>
-        
         {/* Main Navigation */}
         <nav className="flex flex-col space-y-1 text-sm">
           <button 
-            className="flex items-center gap-2 text-left px-3 py-2 rounded-md bg-blue-600 text-white"
-            onClick={() => handleNavClick('insights')}
+            className={`flex items-center gap-2 text-left px-3 py-2 rounded-md ${
+              activeSection === 'insights' ? 'bg-blue-600 text-white' : 'text-gray-300 hover:bg-[#172c51] hover:text-white'
+            }`}
+            onClick={() => onNavigate('insights')}
           >
             <ChartBarIcon className="h-4 w-4" />
             <span>Insights</span>
           </button>
         </nav>
-
         {/* Starred Insights */}
         <div className="mt-8">
           <h2 className="text-xs font-semibold tracking-wide text-gray-400 uppercase mb-2 px-3">STARRED INSIGHTS</h2>
           <div className="space-y-1">
-            {starredInsights.length > 0 ? (
-              starredInsights.map(insight => (
+            {starredInsightIds.length > 0 ? (
+              starredInsightIds.map(insightId => (
                 <button 
-                  key={insight.id}
+                  key={insightId}
                   className={`flex items-center justify-between w-full text-left px-3 py-2 text-xs rounded-md 
-                    ${hoveredInsight === insight.id 
+                    ${hoveredInsight === insightId 
                       ? 'bg-[#172c51] text-white' 
                       : 'text-gray-300 hover:bg-[#172c51] hover:text-white'} 
                     transition-colors`}
-                  onClick={() => handleInsightClick(insight.id)}
-                  onMouseEnter={() => setHoveredInsight(insight.id)}
+                  onClick={() => onUnstar(insightId)}
+                  onMouseEnter={() => setHoveredInsight(insightId)}
                   onMouseLeave={() => setHoveredInsight(null)}
-                  title={insight.title}
                 >
                   <div className="flex items-center">
                     <StarIconSolid className="h-3.5 w-3.5 text-yellow-500 mr-2 flex-shrink-0" />
-                    <span className="truncate max-w-[120px] inline-block">{insight.title}</span>
+                    <span className="truncate max-w-[120px] inline-block">
+                      {customStarredInsights[insightId]?.title || insightId}
+                    </span>
                   </div>
-                  {onInsightUnstar && hoveredInsight === insight.id && (
-                    <XMarkIcon 
-                      className="h-3.5 w-3.5 text-gray-400 hover:text-red-400 flex-shrink-0 ml-1" 
-                      onClick={(e) => handleUnstar(e, insight.id)}
-                      title="Remove from starred"
-                    />
-                  )}
                 </button>
               ))
             ) : (
@@ -131,7 +75,6 @@ export const SidebarModule: React.FC<SidebarModuleProps> = ({
           </div>
         </div>
       </div>
-      
       {/* User Profile */}
       <div className="mt-auto p-4 border-t border-[#172c51]">
         <div className="flex items-center cursor-pointer hover:bg-[#172c51] p-2 rounded-md transition-colors">
