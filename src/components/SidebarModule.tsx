@@ -15,12 +15,6 @@ interface SidebarModuleProps {
   onInsightUnstar?: (insightId: string) => void;
 }
 
-// Debug log function for troubleshooting
-const debugLog = (message: string, data?: any) => {
-  const timestamp = new Date().toISOString();
-  console.log(`[${timestamp}] SidebarModule: ${message}`, data || '');
-};
-
 export const SidebarModule: React.FC<SidebarModuleProps> = ({ 
   onInsightSelect, 
   onNavigate,
@@ -28,44 +22,23 @@ export const SidebarModule: React.FC<SidebarModuleProps> = ({
   onInsightUnstar
 }) => {
   const [hoveredInsight, setHoveredInsight] = useState<string | null>(null);
-  
-  // Log initial props to ensure they're passed correctly
-  useEffect(() => {
-    debugLog('Mounted with props:', { 
-      hasInsightSelect: !!onInsightSelect, 
-      hasNavigate: !!onNavigate,
-      hasUnstar: !!onInsightUnstar,
-      starredInsightsCount: starredInsights.length,
-      starredInsightIds: starredInsights.map(i => i.id)
-    });
-  }, [onInsightSelect, onNavigate, onInsightUnstar, starredInsights]);
 
   const handleInsightClick = (insightId: string) => {
-    debugLog('Starred insight clicked:', insightId);
     if (onInsightSelect) {
       onInsightSelect(insightId);
-    } else {
-      console.error('No onInsightSelect handler provided');
     }
   };
 
   const handleUnstar = (event: React.MouseEvent, insightId: string) => {
     event.stopPropagation(); // Prevent insight selection
-    debugLog('Unstarring insight:', insightId);
     if (onInsightUnstar) {
       onInsightUnstar(insightId);
-    } else {
-      console.error('No onInsightUnstar handler provided');
     }
   };
 
   const handleNavClick = (navItem: string) => {
-    debugLog('Navigation item clicked:', navItem);
-    // Call parent handler
     if (onNavigate) {
       onNavigate(navItem);
-    } else {
-      console.error('No onNavigate handler provided');
     }
   };
 

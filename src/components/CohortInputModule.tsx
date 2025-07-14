@@ -34,15 +34,13 @@ interface CohortInputModuleProps {
 export const CohortInputModule: React.FC<CohortInputModuleProps> = ({ onCohortSelect }) => {
   const [selectedPrompt, setSelectedPrompt] = useState<CohortPrompt>(predefinedPrompts[0]);
 
-  const handlePromptSelect = (prompt: CohortPrompt) => {
-    setSelectedPrompt(prompt);
-  };
+  // Directly use setSelectedPrompt in onChange for conciseness
 
   return (
     <div className="w-full">
       <div className="flex flex-col sm:flex-row gap-3">
         <div className="relative w-full">
-          <Listbox value={selectedPrompt} onChange={handlePromptSelect}>
+          <Listbox value={selectedPrompt} onChange={setSelectedPrompt}>
             <div className="relative mt-1">
               <Listbox.Button className="relative w-full cursor-pointer rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-left shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm">
                 <span className="block truncate">{selectedPrompt.text}</span>
