@@ -239,4 +239,16 @@ The application consists of:
 - A React frontend
 - A mock API server using json-server
 
-In production, both are served from the same container with the frontend on the main port and the API on port 3001. 
+In production, both are served from the same container with the frontend on the main port and the API on port 3001.
+
+## Contributing
+
+We welcome contributions and pull requests! If you have an idea for an improvement, bug fix, or new feature, please open a pull request. For larger changes, consider opening an issue first to discuss your proposal.
+
+**How to contribute:**
+1. Fork the repository and create a new branch for your change.
+2. Make your changes with clear commit messages.
+3. Open a pull request describing your changes and why they are beneficial.
+4. Participate in the code review process.
+
+Thank you for helping improve OncoInsights! 
